@@ -1,0 +1,120 @@
+{
+	"name": "Event sheet لایوت بازی",
+	"events": [
+		{
+			"functionName": "ثبت_پیام",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "متن",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 233859038565952
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "push",
+					"objectClass": "Array",
+					"sid": 569499264508417,
+					"parameters": {
+						"where": "back",
+						"value": "متن",
+						"axis": "x"
+					}
+				}
+			],
+			"sid": 775104601635400
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-size",
+					"objectClass": "Array",
+					"sid": 283125974747744,
+					"parameters": {
+						"axis": "x",
+						"comparison": 4,
+						"value": "20"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "pop",
+					"objectClass": "Array",
+					"sid": 512868401309946,
+					"parameters": {
+						"where": "front",
+						"axis": "x"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "متن_لاگ",
+					"sid": 425158818503373,
+					"parameters": {
+						"text": "\"\""
+					}
+				}
+			],
+			"sid": 926400960325658
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each-element",
+					"objectClass": "Array",
+					"sid": 231879995978776,
+					"parameters": {
+						"axes": "x"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "append-text",
+					"objectClass": "متن_لاگ",
+					"sid": 333773083067117,
+					"parameters": {
+						"text": "Array.CurValue & newline"
+					}
+				}
+			],
+			"sid": 712934621440749
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 156582626695754
+				}
+			],
+			"actions": [
+				{
+					"id": "add-client-input-value",
+					"objectClass": "Multiplayer",
+					"sid": 368561817150979,
+					"parameters": {
+						"tag": "\"y\"",
+						"precision": "low-int16-2-bytes",
+						"interpolation": "linear"
+					}
+				}
+			],
+			"sid": 908419050092608
+		}
+	],
+	"sid": 581855882183268
+}

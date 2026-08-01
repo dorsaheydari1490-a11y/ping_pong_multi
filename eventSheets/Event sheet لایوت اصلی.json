@@ -1,0 +1,124 @@
+{
+	"name": "Event sheet لایوت اصلی",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "نام_بازیکن",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 411595830162500
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 422502532372713
+				}
+			],
+			"actions": [
+				{
+					"id": "set-focused",
+					"objectClass": "نام_تکست_باکس",
+					"sid": 980951825242865
+				}
+			],
+			"sid": 287485089185670
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-text-changed",
+					"objectClass": "نام_تکست_باکس",
+					"sid": 350789480597089
+				}
+			],
+			"actions": [],
+			"sid": 100669200450211,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-text",
+							"objectClass": "نام_تکست_باکس",
+							"sid": 795168281100834,
+							"parameters": {
+								"text": "\"\"",
+								"case": "case-insensitive"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "دکمه_عضویت",
+							"sid": 430923241557789,
+							"parameters": {
+								"mode": "disabled"
+							}
+						}
+					],
+					"sid": 810436245229042
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 838592576878090
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "دکمه_عضویت",
+							"sid": 380912675387415,
+							"parameters": {
+								"mode": "enabled"
+							}
+						}
+					],
+					"sid": 525925676878961
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "دکمه_عضویت",
+					"sid": 229454157863414
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 342751103150940,
+					"parameters": {
+						"variable": "نام_بازیکن",
+						"value": "\"نام_تکست_باکس.text\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 144922317518120,
+					"parameters": {
+						"layout": "لایوت_بازی"
+					}
+				}
+			],
+			"sid": 193035498335671
+		}
+	],
+	"sid": 946966137815184
+}

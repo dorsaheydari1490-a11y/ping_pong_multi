@@ -1,0 +1,60 @@
+{
+	"name": "سلام",
+	"plugin-id": "Sprite",
+	"sid": 541522454280378,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 672,
+						"height": 285,
+						"originX": 0.49776785714285715,
+						"originY": 0.5421052631578948,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2890146,
+						"collisionPoly": {
+							"points": [
+								0.052083333333333336,
+								0.12631578947368424,
+								0.9434523809523809,
+								0.12631578947368424,
+								0.9791666666666666,
+								0.21754385964912282,
+								0.9732142857142857,
+								0.8947368421052632,
+								0.9434523809523809,
+								0.9508771929824561,
+								0.052083333333333336,
+								0.9508771929824561,
+								0.01636904761904762,
+								0.8842105263157894,
+								0.01636904761904762,
+								0.21754385964912282
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 727851214372580,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
