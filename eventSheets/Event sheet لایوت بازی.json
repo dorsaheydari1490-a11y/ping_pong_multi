@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "نام_بازی",
 			"type": "string",
-			"initialValue": "آموزش_نمونه",
+			"initialValue": "ping_pong_dorsa",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -15,7 +15,7 @@
 			"eventType": "variable",
 			"name": "نام_نمونه",
 			"type": "string",
-			"initialValue": "پیش‌فرض",
+			"initialValue": "v8",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -25,7 +25,7 @@
 			"eventType": "variable",
 			"name": "نام_اتاق",
 			"type": "string",
-			"initialValue": "بازی",
+			"initialValue": "duel",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -65,7 +65,7 @@
 					"objectClass": "Array",
 					"sid": 569499264508417,
 					"parameters": {
-						"where": "back",
+						"where": "front",
 						"value": "متن",
 						"axis": "x"
 					}
@@ -83,7 +83,7 @@
 					"parameters": {
 						"axis": "x",
 						"comparison": 4,
-						"value": "20"
+						"value": "8"
 					}
 				}
 			],
@@ -93,10 +93,17 @@
 					"objectClass": "Array",
 					"sid": 512868401309946,
 					"parameters": {
-						"where": "front",
+						"where": "back",
 						"axis": "x"
 					}
-				},
+				}
+			],
+			"sid": 926400960325658
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [
 				{
 					"id": "set-text",
 					"objectClass": "متن_لاگ",
@@ -106,7 +113,7 @@
 					}
 				}
 			],
-			"sid": 926400960325658
+			"sid": 651284739105826
 		},
 		{
 			"eventType": "block",
@@ -158,9 +165,9 @@
 					"sid": 109388547617353,
 					"parameters": {
 						"object": "پد",
-						"x": false,
+						"x": true,
 						"y": true,
-						"angle": false,
+						"angle": true,
 						"precision": "low-int16-2-bytes",
 						"bandwidth": "normal-bandwidth-unpredictable"
 					}
@@ -216,21 +223,17 @@
 			"actions": [
 				{
 					"callFunction": "ثبت_پیام",
-					"sid": 263001075776503,
+					"sid": 109477891379332,
 					"parameters": [
-						"\"«متصل، در حال ورود...»\""
+						"\"connected, logging in as [\" & (نام_بازیکن <> \"\" ? نام_بازیکن : \"player\") & \"]\""
 					]
 				},
 				{
-					"id": "auto-join-room",
+					"id": "log-in",
 					"objectClass": "Multiplayer",
-					"sid": 980163144416346,
+					"sid": 377840594139529,
 					"parameters": {
-						"game": "\"نام_بازی\"",
-						"instance": "\"نام_نمونه\"",
-						"first-room": "\"نام_اتاق\"",
-						"max-peers": "2",
-						"locking": "lock-when-full"
+						"alias": "(نام_بازیکن <> \"\" ? نام_بازیکن : \"player\") & str(int(random(1000) + 1000))"
 					}
 				}
 			],
@@ -240,103 +243,199 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-host",
+					"id": "on-logged-in",
 					"objectClass": "Multiplayer",
-					"sid": 533932307480457
+					"sid": 173022669854889
 				}
 			],
 			"actions": [
 				{
 					"callFunction": "ثبت_پیام",
-					"sid": 519864941789556,
+					"sid": 458364754901833,
 					"parameters": [
-						"\"«به عنوان میزبان به اتاق ملحق شدم، منتظر رقیب هستم...»\""
+						"\"logged in as \" & Multiplayer.MyAlias"
 					]
 				},
 				{
-					"id": "set-group-active",
+					"id": "wait",
 					"objectClass": "System",
-					"sid": 582980265734093,
+					"sid": 537651418521218,
 					"parameters": {
-						"group-name": "\"Host\"",
-						"state": "activated"
+						"seconds": "random(0.3)",
+						"use-timescale": false
 					}
 				},
 				{
-					"id": "set-instvar-value",
-					"objectClass": "پد",
-					"sid": 968297230722030,
-					"parameters": {
-						"instance-variable": "شناسه",
-						"value": "Multiplayer.MyID"
-					}
+					"callFunction": "ثبت_پیام",
+					"sid": 923950150184932,
+					"parameters": [
+						"\"auto-joining ping_pong_dorsa/v7/duel\""
+					]
 				},
 				{
-					"id": "associate-object-with-peer",
+					"id": "auto-join-room",
 					"objectClass": "Multiplayer",
-					"sid": 861613149324275,
+					"sid": 980163144416346,
 					"parameters": {
-						"object": "پد",
-						"peer-id": "Multiplayer.MyID"
+						"game": "\"ping_pong_dorsa\"",
+						"instance": "\"v7\"",
+						"first-room": "\"duel\"",
+						"max-peers": "2",
+						"locking": "lock-when-full"
 					}
 				}
 			],
-			"sid": 614664685216729
+			"sid": 541546360999220
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "else",
-					"objectClass": "System",
-					"sid": 283993514799060
+					"id": "on-joined-room",
+					"objectClass": "Multiplayer",
+					"sid": 614664685216728
 				}
 			],
 			"actions": [
 				{
 					"callFunction": "ثبت_پیام",
-					"sid": 625241831421232,
+					"sid": 818928344425393,
 					"parameters": [
-						"\"اتصال شما به اتاق برقرار شد\""
+						"\"JOINED room=\" & Multiplayer.CurrentRoom & \" game=\" & Multiplayer.CurrentGame & \" inst=\" & Multiplayer.CurrentInstance"
 					]
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 916949017243188,
-					"parameters": {
-						"group-name": "\"Peer\"",
-						"state": "activated"
-					}
 				},
 				{
 					"callFunction": "ثبت_پیام",
-					"sid": 738783226238358,
+					"sid": 866907897066220,
 					"parameters": [
-						"\"در حال برقراری ارتباط با سرور...\""
+						"\"role: \" & (Multiplayer.HostID = Multiplayer.MyID ? \"HOST\" : \"PEER\") & \" peers=\" & Multiplayer.PeerCount"
 					]
-				},
-				{
-					"id": "destroy",
-					"objectClass": "پد",
-					"sid": 243421346149917
-				},
-				{
-					"id": "destroy",
-					"objectClass": "توپ",
-					"sid": 925116245955892
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 588903511521439,
-					"parameters": {
-						"variable": "وضعیت_بازی",
-						"value": "\"آماده\""
-					}
 				}
 			],
-			"sid": 241655808430470
+			"sid": 614664685216727,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-host",
+							"objectClass": "Multiplayer",
+							"sid": 533932307480457
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ثبت_پیام",
+							"sid": 656363482714587,
+							"parameters": [
+								"\"I am HOST — waiting for opponent\""
+							]
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 582980265734093,
+							"parameters": {
+								"group-name": "\"Host\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "پد",
+							"sid": 968297230722030,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"value": "Multiplayer.MyID"
+							}
+						},
+						{
+							"id": "associate-object-with-peer",
+							"objectClass": "Multiplayer",
+							"sid": 861613149324275,
+							"parameters": {
+								"object": "پد",
+								"peer-id": "Multiplayer.MyID"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "پد",
+							"sid": 896637561753594,
+							"parameters": {
+								"x": "50",
+								"y": "LayoutHeight / 2"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "پد",
+							"sid": 779004868958750,
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "پد",
+							"sid": 988091639649684,
+							"parameters": {
+								"width": "253",
+								"height": "65"
+							}
+						}
+					],
+					"sid": 614664685216729
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 283993514799060
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ثبت_پیام",
+							"sid": 506471453380279,
+							"parameters": [
+								"\"I am PEER — waiting for host sync\""
+							]
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 916949017243188,
+							"parameters": {
+								"group-name": "\"Peer\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "پد",
+							"sid": 243421346149917
+						},
+						{
+							"id": "destroy",
+							"objectClass": "توپ",
+							"sid": 925116245955892
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 588903511521439,
+							"parameters": {
+								"variable": "وضعیت_بازی",
+								"value": "\"آماده\""
+							}
+						}
+					],
+					"sid": 241655808430470
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -370,9 +469,9 @@
 			"actions": [
 				{
 					"callFunction": "ثبت_پیام",
-					"sid": 160590316133302,
+					"sid": 587979503057931,
 					"parameters": [
-						"\"خطای ارتباط: \" &  (Multiplayer.ErrorMessage)"
+						"\"ERROR: \" & Multiplayer.ErrorMessage"
 					]
 				}
 			],
@@ -433,7 +532,7 @@
 					"objectClass": "آمار_شبکه",
 					"sid": 607354841613438,
 					"parameters": {
-						"text": "\"دریافت: \" & (round(Multiplayer.StatInboundBandwidth/100)/10) & \" ک.ب/ث\" & newline & \"ارسال: \" & (round(Multiplayer.StatOutboundBandwidth/100)/10) & \" ک.ب/ث\" & newline & \"پینگ: \" & round(Multiplayer.PeerLatency(Multiplayer.HostID)) & \" | نوسان: \" & round(Multiplayer.PeerPDV(Multiplayer.HostID))"
+						"text": "\"دریافت: \" & round(Multiplayer.StatInboundBandwidth) & \" ب/ث  |  ارسال: \" & round(Multiplayer.StatOutboundBandwidth) & \" ب/ث\""
 					}
 				}
 			],
@@ -448,27 +547,70 @@
 					"sid": 199482376123497
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 195906538246427,
+			"children": [
 				{
-					"id": "set-instvar-value",
-					"objectClass": "پد",
-					"sid": 358586575902936,
-					"parameters": {
-						"instance-variable": "شناسه",
-						"value": "Multiplayer.PeerID"
-					}
-				},
-				{
-					"id": "associate-object-with-peer",
-					"objectClass": "Multiplayer",
-					"sid": 911992876728480,
-					"parameters": {
-						"object": "پد",
-						"peer-id": "Multiplayer.PeerID"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 581078491137472,
+							"parameters": {
+								"first-value": "Multiplayer.PeerID",
+								"comparison": 1,
+								"second-value": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "پد",
+							"sid": 568627687234611,
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "پد",
+							"sid": 193414574679004,
+							"parameters": {
+								"width": "253",
+								"height": "65"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "پد",
+							"sid": 358586575902936,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"value": "Multiplayer.PeerID"
+							}
+						},
+						{
+							"id": "associate-object-with-peer",
+							"objectClass": "Multiplayer",
+							"sid": 911992876728480,
+							"parameters": {
+								"object": "پد",
+								"peer-id": "Multiplayer.PeerID"
+							}
+						},
+						{
+							"callFunction": "ثبت_پیام",
+							"sid": 223497870224458,
+							"parameters": [
+								"\"pad created peer=\" & Multiplayer.PeerID & \" count=\" & پد.Count"
+							]
+						}
+					],
+					"sid": 369864026717883
 				}
-			],
-			"sid": 195906538246427
+			]
 		},
 		{
 			"eventType": "block",
@@ -486,7 +628,7 @@
 					"sid": 396829371908975,
 					"parameters": {
 						"tag": "\"y\"",
-						"value": "Mouse.y(\"بازی\")"
+						"value": "Mouse.Y"
 					}
 				}
 			],
@@ -500,7 +642,7 @@
 					"objectClass": "Multiplayer",
 					"sid": 451482713281209,
 					"parameters": {
-						"tag": "\"وضعیت بازی تغییر کرد\""
+						"tag": "\"gamestate-changed\""
 					}
 				}
 			],
@@ -524,6 +666,11 @@
 					"id": "on-peer-connected",
 					"objectClass": "Multiplayer",
 					"sid": 945888216526880
+				},
+				{
+					"id": "is-host",
+					"objectClass": "Multiplayer",
+					"sid": 945888216526881
 				}
 			],
 			"actions": [
@@ -533,11 +680,28 @@
 					"sid": 447096671575293,
 					"parameters": {
 						"object-to-create": "پد",
-						"layer": "\"Layer 0\"",
-						"x": "LayoutWidth - 38",
+						"layer": "\"بازی\"",
+						"x": "LayoutWidth - 50",
 						"y": "LayoutHeight / 2",
 						"create-hierarchy": false,
 						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "پد",
+					"sid": 658914306862745,
+					"parameters": {
+						"angle": "90"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "پد",
+					"sid": 673212275665729,
+					"parameters": {
+						"width": "253",
+						"height": "65"
 					}
 				},
 				{
@@ -559,8 +723,23 @@
 					}
 				},
 				{
+					"id": "set-text",
+					"objectClass": "نمایش_امتیاز",
+					"sid": 683837288104543,
+					"parameters": {
+						"text": "\"0_0\""
+					}
+				},
+				{
 					"callFunction": "ثبت_پیام",
-					"sid": 216750016275288,
+					"sid": 197603817830444,
+					"parameters": [
+						"\"رقیب وصل شد — شروع شمارش معکوس\""
+					]
+				},
+				{
+					"callFunction": "نمایش_امتیاز",
+					"sid": 268280119576426,
 					"parameters": [
 						"\"آماده\""
 					]
@@ -568,7 +747,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 834569489425987,
+					"sid": 371012277451821,
 					"parameters": {
 						"seconds": "3",
 						"use-timescale": true
@@ -576,9 +755,9 @@
 				},
 				{
 					"callFunction": "نمایش_امتیاز",
-					"sid": 423626324260021,
+					"sid": 238529816910093,
 					"parameters": [
-						"\"شروع\""
+						"\"برو\""
 					]
 				},
 				{
@@ -602,7 +781,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 377464683474863,
+					"sid": 124855036177363,
 					"parameters": {
 						"seconds": "1.0",
 						"use-timescale": true
@@ -610,13 +789,48 @@
 				},
 				{
 					"callFunction": "نمایش_امتیاز",
-					"sid": 335821266644317,
+					"sid": 332654842629201,
 					"parameters": [
-						"\"شروع\""
+						"\"شروع_شد\""
 					]
 				}
 			],
 			"sid": 746727173901764
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-connected",
+					"objectClass": "Multiplayer",
+					"sid": 701001001001001
+				},
+				{
+					"id": "is-host",
+					"objectClass": "Multiplayer",
+					"sid": 701001001001002
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 701001001001003,
+					"parameters": {
+						"object": "پد"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "پد",
+					"sid": 701001001001004,
+					"parameters": {
+						"instance-variable": "سکه_ها",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 701001001001005
 		},
 		{
 			"functionName": "نمایش_امتیاز",
@@ -664,6 +878,11 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "is-host",
+					"objectClass": "Multiplayer",
+					"sid": 928720764166213
+				},
+				{
 					"id": "compare-instance-variable",
 					"objectClass": "پد",
 					"sid": 928720764166212,
@@ -671,6 +890,16 @@
 						"instance-variable": "شناسه",
 						"comparison": 1,
 						"value": "Multiplayer.MyID"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "پد",
+					"sid": 928720764166214,
+					"parameters": {
+						"instance-variable": "شناسه",
+						"comparison": 1,
+						"value": "\"\""
 					}
 				}
 			],
@@ -680,7 +909,7 @@
 					"objectClass": "پد",
 					"sid": 784101548025993,
 					"parameters": {
-						"y": "Multiplayer.PeerState(پد.شناسه, \"y\")"
+						"y": "max(0, min(LayoutHeight, Multiplayer.PeerState(پد.شناسه, \"y\")))"
 					}
 				}
 			],
@@ -715,6 +944,11 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "is-host",
+					"objectClass": "Multiplayer",
+					"sid": 430428404074391
+				},
+				{
 					"id": "compare-x",
 					"objectClass": "توپ",
 					"sid": 702950919095891,
@@ -746,7 +980,7 @@
 					"sid": 492749067977577,
 					"parameters": {
 						"instance-variable": "سکه_ها",
-						"value": "1"
+						"value": "پد.سکه_ها + 1"
 					}
 				},
 				{
@@ -792,6 +1026,11 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "is-host",
+					"objectClass": "Multiplayer",
+					"sid": 594636048567628
+				},
+				{
 					"id": "compare-x",
 					"objectClass": "توپ",
 					"sid": 619035319212122,
@@ -811,8 +1050,18 @@
 					"sid": 816866066061835,
 					"parameters": {
 						"instance-variable": "شناسه",
-						"comparison": 0,
+						"comparison": 1,
 						"value": "Multiplayer.HostID"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "پد",
+					"sid": 988719252568547,
+					"parameters": {
+						"instance-variable": "شناسه",
+						"comparison": 1,
+						"value": "\"\""
 					}
 				}
 			],
@@ -823,7 +1072,7 @@
 					"sid": 940918397381220,
 					"parameters": {
 						"instance-variable": "سکه_ها",
-						"value": "1"
+						"value": "پد.سکه_ها + 1"
 					}
 				},
 				{
@@ -925,7 +1174,7 @@
 					"objectClass": "پد",
 					"sid": 240836405800088,
 					"parameters": {
-						"y": "Mouse.Y(\"بازی\")"
+						"y": "Mouse.Y"
 					}
 				}
 			],
@@ -935,130 +1184,69 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 693475922312776
-				}
-			],
-			"actions": [
-				{
-					"id": "move-to-layer",
-					"objectClass": "پد",
-					"sid": 261754533078216,
-					"parameters": {
-						"layer": "0"
-					}
-				},
-				{
-					"id": "move-to-layer",
-					"objectClass": "توپ",
-					"sid": 696313005102014,
-					"parameters": {
-						"layer": "0"
-					}
-				}
-			],
-			"sid": 475172803787609
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 148187591853598,
-					"parameters": {
-						"variable": "وضعیت_بازی",
-						"comparison": 0,
-						"value": "\"آماده\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "نمایش_امتیاز",
-					"sid": 862690502523385,
-					"parameters": {
-						"text": "\"آماده_ای؟\""
-					}
-				}
-			],
-			"sid": 254689488199273
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 521870324058409,
-					"parameters": {
-						"variable": "وضعیت_بازی",
-						"comparison": 0,
-						"value": "\"برو\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "نمایش_امتیاز",
-					"sid": 374879121308807,
-					"parameters": {
-						"text": "\"برو\""
-					}
-				}
-			],
-			"sid": 322995883327656
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 390342767021697,
+					"sid": 992951584847900,
 					"parameters": {
 						"variable": "وضعیت_بازی",
 						"comparison": 0,
 						"value": "\"شروع_شد\""
 					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "پد",
+					"sid": 201091921667105,
+					"parameters": {
+						"instance-variable": "شناسه",
+						"comparison": 0,
+						"value": "Multiplayer.HostID"
+					}
 				}
 			],
 			"actions": [
 				{
 					"id": "set-text",
 					"objectClass": "نمایش_امتیاز",
-					"sid": 589344891908981,
+					"sid": 404913697816928,
 					"parameters": {
-						"text": "\"\""
+						"text": "پد.سکه_ها & \"_\""
 					}
 				}
 			],
-			"sid": 459576055474211
+			"sid": 263319476740459
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 849923308624513,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"comparison": 0,
+						"value": "\"شروع_شد\""
+					}
+				},
+				{
 					"id": "compare-instance-variable",
 					"objectClass": "پد",
-					"sid": 806002700929215,
+					"sid": 534421809171263,
 					"parameters": {
 						"instance-variable": "شناسه",
-						"comparison": 0,
+						"comparison": 1,
 						"value": "Multiplayer.HostID"
 					}
 				},
 				{
 					"id": "compare-instance-variable",
 					"objectClass": "پد",
-					"sid": 963455089226434,
+					"sid": 328953520924805,
 					"parameters": {
 						"instance-variable": "شناسه",
-						"comparison": 0,
-						"value": "Multiplayer.HostID"
+						"comparison": 1,
+						"value": "\"\""
 					}
 				}
 			],
@@ -1066,13 +1254,13 @@
 				{
 					"id": "append-text",
 					"objectClass": "نمایش_امتیاز",
-					"sid": 503173114616205,
+					"sid": 334520557707109,
 					"parameters": {
-						"text": "پد.سکه_ها & \" \" & Multiplayer.PeerAliasFromID(پد.شناسه)"
+						"text": "پد.سکه_ها"
 					}
 				}
 			],
-			"sid": 545409524207810
+			"sid": 377147925770060
 		}
 	],
 	"sid": 581855882183268

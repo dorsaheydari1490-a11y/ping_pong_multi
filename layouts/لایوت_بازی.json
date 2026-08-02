@@ -2,7 +2,7 @@
 	"name": "لایوت_بازی",
 	"layers": [
 		{
-			"name": "Layer 0",
+			"name": "بازی",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
@@ -230,8 +230,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 123,
-						"y": 373,
+						"x": 50,
+						"y": 391,
 						"width": 253.45833333333334,
 						"height": 65.14285714285714,
 						"originX": 0.5056329835020532,
@@ -252,8 +252,8 @@
 						"text": "آمار",
 						"enable-bbcode": true,
 						"font": "Arial",
-						"size": 30,
-						"line-height": 0,
+						"size": 22,
+						"line-height": 8,
 						"bold": false,
 						"italic": false,
 						"color": [
@@ -279,10 +279,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 40,
-						"y": 588,
+						"x": 24,
+						"y": 560,
 						"width": 1202,
-						"height": 88,
+						"height": 110,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -328,10 +328,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 0,
-						"y": 32,
-						"width": 1283,
-						"height": 171,
+						"x": 22,
+						"y": 34,
+						"width": 1200,
+						"height": 180,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -368,7 +368,7 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
-			"renderingMode": "3d",
+			"renderingMode": "2d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -385,6 +385,6 @@
 	"sampling": "auto",
 	"vpX": 0.5,
 	"vpY": 0.5,
-	"projection": "perspective",
+	"projection": "orthographic",
 	"eventSheet": "Event sheet لایوت بازی"
 }
