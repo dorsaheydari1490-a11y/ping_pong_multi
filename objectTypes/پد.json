@@ -4,7 +4,22 @@
 	"sid": 687633186565549,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "شناسه",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 192253928986415
+		},
+		{
+			"name": "سکه_ها",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 563941672408275
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "solid",
