@@ -107,7 +107,9 @@
 			"متن_لاگ",
 			"نام_تکست_باکس",
 			"دکمه_عضویت",
-			"Array"
+			"Array",
+			"TiledBackground2",
+			"TiledBackground3"
 		],
 		"subfolders": []
 	},

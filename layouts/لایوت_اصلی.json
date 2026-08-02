@@ -2,6 +2,85 @@
 	"name": "لایوت_اصلی",
 	"layers": [
 		{
+			"name": "بک گراند",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "TiledBackground3",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 18,
+					"sid": 349767757699865,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": -1,
+						"y": -7,
+						"width": 1279,
+						"height": 729,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							0.7
+						],
+						"z": 0,
+						"angle": 0
+					}
+				}
+			],
+			"sid": 821245117521846,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				0.8
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": true,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
 			"name": "Layer 0",
 			"overriden": 0,
 			"subLayers": [],
@@ -25,10 +104,10 @@
 					"world": {
 						"x": 639,
 						"y": 124,
-						"width": 672,
-						"height": 260,
-						"originX": 0.49776785714285715,
-						"originY": 0.5421052631578948,
+						"width": 637,
+						"height": 113.12280701754385,
+						"originX": 0.499225583090379,
+						"originY": 0.5984295415959253,
 						"color": [
 							1,
 							1,
@@ -129,7 +208,7 @@
 				1,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
 			"sampling": "auto",
 			"parallaxX": 1,
 			"parallaxY": 1,
