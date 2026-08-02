@@ -566,8 +566,54 @@
 					]
 				},
 				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 834569489425987,
+					"parameters": {
+						"seconds": "3",
+						"use-timescale": true
+					}
+				},
+				{
 					"callFunction": "نمایش_امتیاز",
-					"sid": 152204190434580
+					"sid": 423626324260021,
+					"parameters": [
+						"\"شروع\""
+					]
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "توپ",
+					"sid": 464481182374705,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "توپ",
+					"sid": 855042961806998,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "random(360)"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 377464683474863,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"callFunction": "نمایش_امتیاز",
+					"sid": 335821266644317,
+					"parameters": [
+						"\"شروع\""
+					]
 				}
 			],
 			"sid": 746727173901764
@@ -579,11 +625,454 @@
 			"functionReturnType": "none",
 			"functionCopyPicked": false,
 			"functionIsAsync": false,
-			"functionParameters": [],
+			"functionParameters": [
+				{
+					"name": "وضعیت",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 890048855040928
+				}
+			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 413135847247642,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"value": "وضعیت"
+					}
+				},
+				{
+					"id": "broadcast-message",
+					"objectClass": "Multiplayer",
+					"sid": 484084016269353,
+					"parameters": {
+						"from-id": "\"\"",
+						"tag": "\"gamestate-changed\"",
+						"message": "وضعیت_بازی",
+						"mode": "reliable-ordered"
+					}
+				}
+			],
 			"sid": 948892895930912
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "پد",
+					"sid": 928720764166212,
+					"parameters": {
+						"instance-variable": "شناسه",
+						"comparison": 1,
+						"value": "Multiplayer.MyID"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "پد",
+					"sid": 784101548025993,
+					"parameters": {
+						"y": "Multiplayer.PeerState(پد.شناسه, \"y\")"
+					}
+				}
+			],
+			"sid": 241719691855303
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "توپ",
+					"sid": 821152729994756,
+					"parameters": {
+						"object": "پد"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "توپ",
+					"sid": 849999043496104,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "توپ.Bullet.Speed + 30"
+					}
+				}
+			],
+			"sid": 902378181168427
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "توپ",
+					"sid": 702950919095891,
+					"parameters": {
+						"comparison": 2,
+						"x-co-ordinate": "0"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 198436970072225
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "پد",
+					"sid": 995801735462493,
+					"parameters": {
+						"instance-variable": "شناسه",
+						"comparison": 0,
+						"value": "Multiplayer.HostID"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "پد",
+					"sid": 492749067977577,
+					"parameters": {
+						"instance-variable": "سکه_ها",
+						"value": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 928043004945509,
+					"parameters": {
+						"seconds": "2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "توپ",
+					"sid": 922521763702867,
+					"parameters": {
+						"x": "LayoutWidth / 2",
+						"y": "LayoutHeight / 2"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "توپ",
+					"sid": 951414592542686,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "random(360)"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "توپ",
+					"sid": 558665698327695,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "300"
+					}
+				}
+			],
+			"sid": 483699609380200
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "توپ",
+					"sid": 619035319212122,
+					"parameters": {
+						"comparison": 4,
+						"x-co-ordinate": "LayoutWidth"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 764184370869715
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "پد",
+					"sid": 816866066061835,
+					"parameters": {
+						"instance-variable": "شناسه",
+						"comparison": 0,
+						"value": "Multiplayer.HostID"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "پد",
+					"sid": 940918397381220,
+					"parameters": {
+						"instance-variable": "سکه_ها",
+						"value": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 157196282936022,
+					"parameters": {
+						"seconds": "2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "توپ",
+					"sid": 546600407038641,
+					"parameters": {
+						"x": "LayoutWidth / 2",
+						"y": "LayoutHeight / 2"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "توپ",
+					"sid": 416113585980792,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "random(360)"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "توپ",
+					"sid": 494590336595601,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "300"
+					}
+				}
+			],
+			"sid": 372731394710952
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-connected",
+					"objectClass": "Multiplayer",
+					"sid": 261926705523779
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 481808255278804,
+					"parameters": [
+						"\"'\" & Multiplayer.PeerAlias & \"' وارد شد\""
+					]
+				}
+			],
+			"sid": 213232380163057
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-disconnected",
+					"objectClass": "Multiplayer",
+					"sid": 618008954997189
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 504849601962349,
+					"parameters": [
+						"\"'\" & Multiplayer.PeerAlias & \"' خارج شد\""
+					]
+				}
+			],
+			"sid": 289005437073951
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "پد",
+					"sid": 935599841472269,
+					"parameters": {
+						"instance-variable": "شناسه",
+						"comparison": 0,
+						"value": "Multiplayer.MyID"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "پد",
+					"sid": 240836405800088,
+					"parameters": {
+						"y": "Mouse.Y(\"بازی\")"
+					}
+				}
+			],
+			"sid": 562827252681422
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 693475922312776
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-layer",
+					"objectClass": "پد",
+					"sid": 261754533078216,
+					"parameters": {
+						"layer": "0"
+					}
+				},
+				{
+					"id": "move-to-layer",
+					"objectClass": "توپ",
+					"sid": 696313005102014,
+					"parameters": {
+						"layer": "0"
+					}
+				}
+			],
+			"sid": 475172803787609
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 148187591853598,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"comparison": 0,
+						"value": "\"آماده\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "نمایش_امتیاز",
+					"sid": 862690502523385,
+					"parameters": {
+						"text": "\"آماده_ای؟\""
+					}
+				}
+			],
+			"sid": 254689488199273
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 521870324058409,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"comparison": 0,
+						"value": "\"برو\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "نمایش_امتیاز",
+					"sid": 374879121308807,
+					"parameters": {
+						"text": "\"برو\""
+					}
+				}
+			],
+			"sid": 322995883327656
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 390342767021697,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"comparison": 0,
+						"value": "\"شروع_شد\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "نمایش_امتیاز",
+					"sid": 589344891908981,
+					"parameters": {
+						"text": "\"\""
+					}
+				}
+			],
+			"sid": 459576055474211
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "پد",
+					"sid": 806002700929215,
+					"parameters": {
+						"instance-variable": "شناسه",
+						"comparison": 0,
+						"value": "Multiplayer.HostID"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "پد",
+					"sid": 963455089226434,
+					"parameters": {
+						"instance-variable": "شناسه",
+						"comparison": 0,
+						"value": "Multiplayer.HostID"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "append-text",
+					"objectClass": "نمایش_امتیاز",
+					"sid": 503173114616205,
+					"parameters": {
+						"text": "پد.سکه_ها & \" \" & Multiplayer.PeerAliasFromID(پد.شناسه)"
+					}
+				}
+			],
+			"sid": 545409524207810
 		}
 	],
 	"sid": 581855882183268
