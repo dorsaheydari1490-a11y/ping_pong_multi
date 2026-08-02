@@ -42,6 +42,26 @@
 			"sid": 751939155442397
 		},
 		{
+			"eventType": "variable",
+			"name": "ورودی_Y",
+			"type": "number",
+			"initialValue": "360",
+			"comment": "آخرین موقعیت عمودی کنترل (تاچ یا موس)",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 628401957384261
+		},
+		{
+			"eventType": "variable",
+			"name": "تاچ_فعال",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "۱ اگر بازیکن حداقل یک‌بار تاچ کرده باشد",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 739512068495372
+		},
+		{
 			"functionName": "ثبت_پیام",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -616,6 +636,74 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 471829365017482,
+					"parameters": {
+						"first-value": "Touch.TouchCount",
+						"comparison": 4,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 582910374658291,
+					"parameters": {
+						"variable": "ورودی_Y",
+						"value": "Touch.Y"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 583021485769402,
+					"parameters": {
+						"variable": "تاچ_فعال",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 693048175829364
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 704159286930475
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 815260397041586,
+					"parameters": {
+						"variable": "تاچ_فعال",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 926371408152697,
+					"parameters": {
+						"variable": "ورودی_Y",
+						"value": "Mouse.Y"
+					}
+				}
+			],
+			"sid": 137482519263708
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-client-update",
 					"objectClass": "Multiplayer",
 					"sid": 949561108881710
@@ -628,7 +716,7 @@
 					"sid": 396829371908975,
 					"parameters": {
 						"tag": "\"y\"",
-						"value": "Mouse.Y"
+						"value": "ورودی_Y"
 					}
 				}
 			],
@@ -1174,7 +1262,7 @@
 					"objectClass": "پد",
 					"sid": 240836405800088,
 					"parameters": {
-						"y": "Mouse.Y"
+						"y": "ورودی_Y"
 					}
 				}
 			],
