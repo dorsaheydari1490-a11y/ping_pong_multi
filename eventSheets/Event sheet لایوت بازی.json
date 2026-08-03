@@ -190,6 +190,20 @@
 			],
 			"actions": [
 				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 871076360521212,
+					"parameters": {
+						"audio-file": {
+							"path": "ping_pong"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
 					"id": "add-client-input-value",
 					"objectClass": "Multiplayer",
 					"sid": 368561817150979,
