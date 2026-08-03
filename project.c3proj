@@ -147,7 +147,16 @@
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "ping_pong.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 238322773410460,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"video": {
