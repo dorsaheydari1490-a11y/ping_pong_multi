@@ -54,29 +54,11 @@
 				},
 				{
 					"id": "set-css-style",
-					"objectClass": "نام_تکست_باکس",
-					"sid": 617284093516286,
-					"parameters": {
-						"property": "\"font-size\"",
-						"value": "\"36px\""
-					}
-				},
-				{
-					"id": "set-css-style",
 					"objectClass": "دکمه_عضویت",
 					"sid": 617284093516287,
 					"parameters": {
 						"property": "\"color\"",
 						"value": "\"#000000\""
-					}
-				},
-				{
-					"id": "set-css-style",
-					"objectClass": "دکمه_عضویت",
-					"sid": 617284093516288,
-					"parameters": {
-						"property": "\"font-size\"",
-						"value": "\"40px\""
 					}
 				}
 			],

@@ -1,11 +1,19 @@
 #player-name-input {
 	color: #ffffff;
 	font-weight: 700;
-	font-size: 36px;
+	font-size: clamp(12px, calc(var(--construct-scale, 1) * 26px), 30px);
 	background-color: #1a1a1a;
+	box-sizing: border-box;
+	padding: 0 12px;
+	line-height: normal;
 }
 
 #join-button {
 	color: #000000;
-	font-size: 40px;
+	font-weight: 700;
+	font-size: clamp(12px, calc(var(--construct-scale, 1) * 26px), 30px);
+	box-sizing: border-box;
+	padding: 0 10px;
+	line-height: normal;
+	overflow: hidden;
 }
