@@ -22,6 +22,20 @@
 			],
 			"actions": [
 				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 175026720955298,
+					"parameters": {
+						"audio-file": {
+							"path": "8-Bit Ping Pong start"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
 					"id": "set-focused",
 					"objectClass": "نام_تکست_باکس",
 					"sid": 980951825242865
@@ -39,7 +53,7 @@
 					"objectClass": "نام_تکست_باکس",
 					"sid": 617284093516284,
 					"parameters": {
-						"property": "\"color\"",
+						"property-name": "\"border\"",
 						"value": "\"#ffffff\""
 					}
 				},
@@ -48,7 +62,7 @@
 					"objectClass": "نام_تکست_باکس",
 					"sid": 617284093516285,
 					"parameters": {
-						"property": "\"font-weight\"",
+						"property-name": "\"border\"",
 						"value": "\"700\""
 					}
 				},
@@ -57,7 +71,7 @@
 					"objectClass": "دکمه_عضویت",
 					"sid": 617284093516287,
 					"parameters": {
-						"property": "\"color\"",
+						"property-name": "\"border\"",
 						"value": "\"#000000\""
 					}
 				}
@@ -150,6 +164,11 @@
 					"parameters": {
 						"layout": "لایوت_بازی"
 					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 379826768775881
 				}
 			],
 			"sid": 193035498335671
