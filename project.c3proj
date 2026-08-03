@@ -220,7 +220,16 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "ui.css",
+					"type": "text/css",
+					"sid": 884512739016482,
+					"file-info": {
+						"purpose": "stylesheet"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},

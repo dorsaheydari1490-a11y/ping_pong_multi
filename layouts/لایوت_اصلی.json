@@ -129,9 +129,9 @@
 						"read-only": false,
 						"spell-check": false,
 						"type": "text",
-						"auto-font-size": true,
-						"id": "",
-						"class": ""
+						"auto-font-size": false,
+						"id": "player-name-input",
+						"class": "ui-input"
 					},
 					"uid": 4,
 					"sid": 591632128477263,
@@ -163,10 +163,10 @@
 						"tooltip": "",
 						"initially-visible": true,
 						"enabled": false,
-						"auto-font-size": true,
+						"auto-font-size": false,
 						"checked": false,
-						"id": "",
-						"class": ""
+						"id": "join-button",
+						"class": "ui-button"
 					},
 					"uid": 5,
 					"sid": 753800341781390,
