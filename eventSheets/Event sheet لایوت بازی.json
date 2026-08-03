@@ -62,6 +62,26 @@
 			"sid": 739512068495372
 		},
 		{
+			"eventType": "variable",
+			"name": "نام_هاست",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 628401957384301
+		},
+		{
+			"eventType": "variable",
+			"name": "نام_کلاینت",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 628401957384302
+		},
+		{
 			"functionName": "ثبت_پیام",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -403,6 +423,24 @@
 								"width": "253",
 								"height": "65"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 614664685216740,
+							"parameters": {
+								"variable": "نام_هاست",
+								"value": "نام_بازیکن <> \"\" ? نام_بازیکن : left(Multiplayer.MyAlias, max(1, len(Multiplayer.MyAlias) - 4))"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 614664685216741,
+							"parameters": {
+								"variable": "نام_کلاینت",
+								"value": "\"\""
+							}
 						}
 					],
 					"sid": 614664685216729
@@ -450,6 +488,56 @@
 							"parameters": {
 								"variable": "وضعیت_بازی",
 								"value": "\"آماده\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 241655808430480,
+							"parameters": {
+								"variable": "نام_کلاینت",
+								"value": "نام_بازیکن <> \"\" ? نام_بازیکن : left(Multiplayer.MyAlias, max(1, len(Multiplayer.MyAlias) - 4))"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 241655808430481,
+							"parameters": {
+								"variable": "نام_هاست",
+								"value": "left(Multiplayer.PeerAliasFromID(Multiplayer.HostID), max(1, len(Multiplayer.PeerAliasFromID(Multiplayer.HostID)) - 4))"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "HalfHost",
+							"sid": 900000000000001,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "HalfClient",
+							"sid": 900000000000002,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "CenterLine",
+							"sid": 900000000000003,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نمایش_امتیاز",
+							"sid": 241655808430482,
+							"parameters": {
+								"text": "(Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"  0 — 0  \" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت"
 							}
 						}
 					],
@@ -811,11 +899,44 @@
 					}
 				},
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 683837288104550,
+					"parameters": {
+						"variable": "نام_کلاینت",
+						"value": "left(Multiplayer.PeerAlias, max(1, len(Multiplayer.PeerAlias) - 4))"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "HalfHost",
+					"sid": 900000000000001,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "HalfClient",
+					"sid": 900000000000002,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "CenterLine",
+					"sid": 900000000000003,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
 					"id": "set-text",
 					"objectClass": "نمایش_امتیاز",
 					"sid": 683837288104543,
 					"parameters": {
-						"text": "\"0_0\""
+						"text": "(Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"  0 — 0  \" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت"
 					}
 				},
 				{
@@ -884,41 +1005,6 @@
 				}
 			],
 			"sid": 746727173901764
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-peer-connected",
-					"objectClass": "Multiplayer",
-					"sid": 701001001001001
-				},
-				{
-					"id": "is-host",
-					"objectClass": "Multiplayer",
-					"sid": 701001001001002
-				},
-				{
-					"id": "for-each",
-					"objectClass": "System",
-					"sid": 701001001001003,
-					"parameters": {
-						"object": "پد"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "پد",
-					"sid": 701001001001004,
-					"parameters": {
-						"instance-variable": "سکه_ها",
-						"value": "0"
-					}
-				}
-			],
-			"sid": 701001001001005
 		},
 		{
 			"functionName": "نمایش_امتیاز",
@@ -1220,7 +1306,93 @@
 					]
 				}
 			],
-			"sid": 213232380163057
+			"sid": 213232380163057,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-host",
+							"objectClass": "Multiplayer",
+							"sid": 213232380163058
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 213232380163070,
+							"parameters": {
+								"variable": "نام_کلاینت",
+								"value": "left(Multiplayer.PeerAlias, max(1, len(Multiplayer.PeerAlias) - 4))"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نمایش_امتیاز",
+							"sid": 213232380163071,
+							"parameters": {
+								"text": "(Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"  0 — 0  \" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت"
+							}
+						}
+					],
+					"sid": 213232380163060
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 213232380163061
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 213232380163072,
+							"parameters": {
+								"variable": "نام_هاست",
+								"value": "left(Multiplayer.PeerAlias, max(1, len(Multiplayer.PeerAlias) - 4))"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "HalfHost",
+							"sid": 900000000000001,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "HalfClient",
+							"sid": 900000000000002,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "CenterLine",
+							"sid": 900000000000003,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نمایش_امتیاز",
+							"sid": 213232380163073,
+							"parameters": {
+								"text": "(Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"  0 — 0  \" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت"
+							}
+						}
+					],
+					"sid": 213232380163063
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -1238,6 +1410,47 @@
 					"parameters": [
 						"\"'\" & Multiplayer.PeerAlias & \"' خارج شد\""
 					]
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 289005437073960,
+					"parameters": {
+						"variable": "نام_کلاینت",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "HalfHost",
+					"sid": 900000000000011,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "HalfClient",
+					"sid": 900000000000012,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "CenterLine",
+					"sid": 900000000000013,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نمایش_امتیاز",
+					"sid": 289005437073961,
+					"parameters": {
+						"text": "\"منتظر یه رقیب...\""
+					}
 				}
 			],
 			"sid": 289005437073951
@@ -1298,7 +1511,7 @@
 					"objectClass": "نمایش_امتیاز",
 					"sid": 404913697816928,
 					"parameters": {
-						"text": "پد.سکه_ها & \"_\""
+						"text": "(Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"  \" & پد.سکه_ها & \" — \""
 					}
 				}
 			],
@@ -1344,7 +1557,7 @@
 					"objectClass": "نمایش_امتیاز",
 					"sid": 334520557707109,
 					"parameters": {
-						"text": "پد.سکه_ها"
+						"text": "پد.سکه_ها & \"  \" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت"
 					}
 				}
 			],
