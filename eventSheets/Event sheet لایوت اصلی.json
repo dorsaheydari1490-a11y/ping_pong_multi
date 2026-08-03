@@ -27,6 +27,14 @@
 					"sid": 980951825242865
 				},
 				{
+					"id": "set-max-length",
+					"objectClass": "نام_تکست_باکس",
+					"sid": 617284093516283,
+					"parameters": {
+						"max-length": "8"
+					}
+				},
+				{
 					"id": "set-css-style",
 					"objectClass": "نام_تکست_باکس",
 					"sid": 617284093516284,
