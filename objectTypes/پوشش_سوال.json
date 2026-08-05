@@ -1,7 +1,7 @@
 {
-	"name": "HalfHost",
+	"name": "پوشش_سوال",
 	"plugin-id": "TiledBg",
-	"sid": 771829104563001,
+	"sid": 811000000000010,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
@@ -16,7 +16,7 @@
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"fileType": "image/png",
-		"imageSpriteId": 8811001,
+		"imageSpriteId": 811000002,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

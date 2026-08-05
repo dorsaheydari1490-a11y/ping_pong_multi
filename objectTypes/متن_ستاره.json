@@ -1,0 +1,10 @@
+{
+	"name": "متن_ستاره",
+	"plugin-id": "Text",
+	"sid": 811000000000050,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

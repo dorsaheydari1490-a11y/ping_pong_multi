@@ -1,0 +1,94 @@
+{
+	"name": "دکمه_گزینه",
+	"plugin-id": "Sprite",
+	"sid": 340876230121010,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "شماره",
+			"type": "number",
+			"desc": "0/1/2",
+			"show": true,
+			"sid": 340876230121011
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 100,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1306287,
+						"collisionPoly": {
+							"points": [
+								0.32,
+								0,
+								0.68,
+								0,
+								0.95,
+								0.11,
+								0.98,
+								0.18,
+								0.99,
+								0.23,
+								1,
+								0.76,
+								0.99,
+								0.82,
+								0.96,
+								0.9,
+								0.91,
+								0.95,
+								0.84,
+								0.98,
+								0.79,
+								0.99,
+								0.69,
+								1,
+								0.34,
+								1,
+								0.08,
+								0.94,
+								0.05,
+								0.91,
+								0.01,
+								0.82,
+								0,
+								0.76,
+								0.01,
+								0.22,
+								0.03,
+								0.15,
+								0.06,
+								0.09,
+								0.14,
+								0.03
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 149876394329572,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

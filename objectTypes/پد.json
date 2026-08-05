@@ -18,6 +18,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 563941672408275
+		},
+		{
+			"name": "ستاره_ها",
+			"type": "number",
+			"desc": "ستاره آموزشی",
+			"show": true,
+			"sid": 811000000000090
 		}
 	],
 	"behaviorTypes": [

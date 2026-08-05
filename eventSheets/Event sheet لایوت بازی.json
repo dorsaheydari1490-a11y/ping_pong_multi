@@ -15,7 +15,7 @@
 			"eventType": "variable",
 			"name": "نام_نمونه",
 			"type": "string",
-			"initialValue": "v8",
+			"initialValue": "v9",
 			"comment": "نسخه/اینستنس اتاق‌ها (مثلا v8). با عوض کردنش میتونی از اتاق‌های قدیمی جدا شی.",
 			"isStatic": false,
 			"isConstant": false,
@@ -82,14 +82,112 @@
 			"sid": 628401957384302
 		},
 		{
-			"eventType": "comment",
-			"text": "[h2]لایوت بازی — پینگ‌پونگ دونفره آنلاین[/h2]\nجریان کلی: وصل به Multiplayer، لاگین، AutoJoin اتاق دونفره. هاست مرجع شبیه‌سازی است (توپ و امتیاز)، Peer فقط ورودی y می‌فرستد و آبجکت‌های sync‌شده را می‌بیند. لاگ روی صفحه برای دیباگ شبکه است.",
-			"sid": 584220233469219
+			"eventType": "variable",
+			"name": "زمان_سوال",
+			"type": "number",
+			"initialValue": "15",
+			"comment": "شمارش معکوس ۱۵ ثانیه برای جواب",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 812000000000001
+		},
+		{
+			"eventType": "variable",
+			"name": "شماره_سوال",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "ایندکس سوال فعلی ۰ تا ۵",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 812000000000002
+		},
+		{
+			"eventType": "variable",
+			"name": "جواب_درست",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "ایندکس گزینه درست",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 812000000000003
+		},
+		{
+			"eventType": "variable",
+			"name": "جواب_هاست",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "جواب هاست؛ ۱- یعنی هنوز نزده",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 812000000000004
+		},
+		{
+			"eventType": "variable",
+			"name": "جواب_کلاینت",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "جواب کلاینت؛ ۱- یعنی هنوز نزده",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 812000000000005
+		},
+		{
+			"eventType": "variable",
+			"name": "جواب_من",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "جواب محلی این کلاینت",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 812000000000006
+		},
+		{
+			"eventType": "variable",
+			"name": "فاز_سوال",
+			"type": "string",
+			"initialValue": "خاموش",
+			"comment": "خاموش / جواب / توضیح / پایان",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 812000000000007
+		},
+		{
+			"eventType": "variable",
+			"name": "بمب_باقی",
+			"type": "number",
+			"initialValue": "6",
+			"comment": "تعداد بمب‌های باقی‌مانده",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 812000000000008
+		},
+		{
+			"eventType": "variable",
+			"name": "توضیح_فعلی",
+			"type": "string",
+			"initialValue": "",
+			"comment": "متن توضیح کوتاه سوال",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 812000000000009
+		},
+		{
+			"eventType": "variable",
+			"name": "دقت_غلط",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "غلط‌های پشت‌سرهم برای پیام دقت",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 812000000000010
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]تابع ثبت_پیام[/h3]\nهر پیام دیباگ را از جلو آرایه push میکند تا جدیدترین‌ها اول لیست باشند.",
-			"sid": 529612912750109
+			"text": "[h2]لایوت بازی — پینگ‌پونگ دونفره آنلاین[/h2]\nجریان کلی: وصل به Multiplayer، لاگین، AutoJoin اتاق دونفره. هاست مرجع شبیه‌سازی است (توپ و امتیاز)، Peer فقط ورودی y می‌فرستد و آبجکت‌های sync‌شده را می‌بیند. لاگ روی صفحه برای دیباگ شبکه است."
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]تابع ثبت_پیام[/h3]\nهر پیام دیباگ را از جلو آرایه push میکند تا جدیدترین‌ها اول لیست باشند."
 		},
 		{
 			"functionName": "ثبت_پیام",
@@ -125,8 +223,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]محدود کردن لاگ[/h3]\nاگر بیش از ۸ پیام جمع شد، از ته آرایه pop میکند تا UI شلوغ نشود.",
-			"sid": 418783799135256
+			"text": "[h3]محدود کردن لاگ[/h3]\nاگر بیش از ۸ پیام جمع شد، از ته آرایه pop میکند تا UI شلوغ نشود."
 		},
 		{
 			"eventType": "block",
@@ -157,8 +254,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]پاک‌سازی متن لاگ[/h3]\nمتن نمایش لاگ را خالی میکند تا بعدا از روی آرایه دوباره ساخته شود.",
-			"sid": 806670107015948
+			"text": "[h3]پاک‌سازی متن لاگ[/h3]\nمتن نمایش لاگ را خالی میکند تا بعدا از روی آرایه دوباره ساخته شود."
 		},
 		{
 			"eventType": "block",
@@ -177,8 +273,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]بازسازی نمایش لاگ[/h3]\nروی همه عناصر آرایه میچرخد و خط‌به‌خط به متن_لاگ اضافه میکند.",
-			"sid": 716402839362633
+			"text": "[h3]بازسازی نمایش لاگ[/h3]\nروی همه عناصر آرایه میچرخد و خط‌به‌خط به متن_لاگ اضافه میکند."
 		},
 		{
 			"eventType": "block",
@@ -206,8 +301,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]شروع لایوت بازی — راه‌اندازی شبکه[/h3]\nموسیقی بازی، تعریف ورودی کلاینت با تگ y، همگام‌سازی پد/توپ و متغیر سکه، بعد اتصال به سرور Multiplayer.",
-			"sid": 805308557427591
+			"text": "[h3]شروع لایوت بازی — راه‌اندازی شبکه[/h3]\nموسیقی بازی، تعریف ورودی کلاینت با تگ y، همگام‌سازی پد/توپ و متغیر سکه، بعد اتصال به سرور Multiplayer."
 		},
 		{
 			"eventType": "block",
@@ -291,14 +385,227 @@
 					"parameters": {
 						"server": "\"wss://multiplayer.construct.net\""
 					}
+				},
+				{
+					"id": "sync-object-2",
+					"objectClass": "Multiplayer",
+					"sid": 812000000000011,
+					"parameters": {
+						"object": "بمب",
+						"x": true,
+						"y": true,
+						"angle": false,
+						"precision": "low-int16-2-bytes",
+						"bandwidth": "normal-bandwidth-unpredictable"
+					}
+				},
+				{
+					"id": "sync-instance-variable",
+					"objectClass": "Multiplayer",
+					"sid": 812000000000012,
+					"parameters": {
+						"object": "پد",
+						"instance-variable": {
+							"name": "ستاره_ها",
+							"objectClass": "پد"
+						},
+						"precision": "low-int16-2-bytes",
+						"interpolation": "none",
+						"client-value-tag": "\"\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پوشش_سوال",
+					"sid": 812000000000013,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_سوال",
+					"sid": 812000000000014,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "گزینه_سوال",
+					"sid": 812000000000015,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_توضیح",
+					"sid": 812000000000016,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_نتیجه",
+					"sid": 812000000000017,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پس",
+					"sid": 812000000000018,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پر",
+					"sid": 812000000000019,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 812000000000020,
+					"parameters": {
+						"variable": "بمب_باقی",
+						"value": "6"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 812000000000021,
+					"parameters": {
+						"variable": "فاز_سوال",
+						"value": "\"خاموش\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "متن_ستاره",
+					"sid": 812000000000022,
+					"parameters": {
+						"text": "\"★★★\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_اول",
+					"sid": 821000000000173,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_دوم",
+					"sid": 821000000000174,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_سوم",
+					"sid": 821000000000175,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_چهارم",
+					"sid": 821000000000176,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_پنجم",
+					"sid": 821000000000177,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_6",
+					"sid": 821000000000178,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_اول",
+					"sid": 821000000000179,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_قسمت_دوم",
+					"sid": 821000000000180,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_سوم",
+					"sid": 821000000000181,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_چهارم",
+					"sid": 821000000000182,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_پنجم",
+					"sid": 821000000000183,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "جواب_سوال_ششم",
+					"sid": 821000000000184,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_گزینه",
+					"sid": 821000000000185,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 908419050092608
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]On Connected[/h3]\nبعد از وصل شدن به سیگنالینگ سرور، با آلیاس نام بازیکن به علاوه عدد تصادفی لاگین میکند.",
-			"sid": 520544297510991
+			"text": "[h3]On Connected[/h3]\nبعد از وصل شدن به سیگنالینگ سرور، با آلیاس نام بازیکن به علاوه عدد تصادفی لاگین میکند."
 		},
 		{
 			"eventType": "block",
@@ -330,8 +637,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]On Logged In[/h3]\nیک تأخیر کوتاه تصادفی میگذارد تا دو کلاینت همزمان به یک اتاق نچسبند، بعد AutoJoin با ظرفیت ۲ و قفل وقتی پر شد.",
-			"sid": 755891691188891
+			"text": "[h3]On Logged In[/h3]\nیک تأخیر کوتاه تصادفی میگذارد تا دو کلاینت همزمان به یک اتاق نچسبند، بعد AutoJoin با ظرفیت ۲ و قفل وقتی پر شد."
 		},
 		{
 			"eventType": "block",
@@ -363,7 +669,7 @@
 					"callFunction": "ثبت_پیام",
 					"sid": 923950150184932,
 					"parameters": [
-						"\"auto-joining ping_pong_dorsa/v7/duel\""
+						"\"auto-joining ping_pong_dorsa/v9/duel\""
 					]
 				},
 				{
@@ -372,7 +678,7 @@
 					"sid": 980163144416346,
 					"parameters": {
 						"game": "\"ping_pong_dorsa\"",
-						"instance": "\"v7\"",
+						"instance": "\"v9\"",
 						"first-room": "\"duel\"",
 						"max-peers": "2",
 						"locking": "lock-when-full"
@@ -383,8 +689,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]On Joined Room[/h3]\nنقش Host یا Peer مشخص میشود؛ بعد بر اساس نقش، گروه منطقی و آبجکت‌های محلی تنظیم میشوند.",
-			"sid": 986848787326459
+			"text": "[h3]On Joined Room[/h3]\nنقش Host یا Peer مشخص میشود؛ بعد بر اساس نقش، گروه منطقی و آبجکت‌های محلی تنظیم میشوند."
 		},
 		{
 			"eventType": "block",
@@ -415,8 +720,7 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "[b]مسیر هاست[/b]\nگروه Host روشن میشود، پد خودش را به PeerID خودش associate میکند، سمت چپ زمین میگذارد، و نام هاست را برای امتیاز ست میکند.",
-					"sid": 834509053973819
+					"text": "[b]مسیر هاست[/b]\nگروه Host روشن میشود، پد خودش را به PeerID خودش associate میکند، سمت چپ زمین میگذارد، و نام هاست را برای امتیاز ست میکند."
 				},
 				{
 					"eventType": "block",
@@ -511,8 +815,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "[b]مسیر Peer مهمان[/b]\nگروه Peer روشن میشود. پد و توپ لوکال پاک میشوند چون از هاست sync میآیند. وضعیت آماده، نام‌ها ست، و خطوط زمین/نوار امتیاز نمایش داده میشوند.",
-					"sid": 281688651006759
+					"text": "[b]مسیر Peer مهمان[/b]\nگروه Peer روشن میشود. پد و توپ لوکال پاک میشوند چون از هاست sync میآیند. وضعیت آماده، نام‌ها ست، و خطوط زمین/نوار امتیاز نمایش داده میشوند."
 				},
 				{
 					"eventType": "block",
@@ -616,8 +919,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]قطع اتصال[/h3]\nوقتی لینک Multiplayer قطع شد، در لاگ ثبت میشود.",
-			"sid": 556023102755539
+			"text": "[h3]قطع اتصال[/h3]\nوقتی لینک Multiplayer قطع شد، در لاگ ثبت میشود."
 		},
 		{
 			"eventType": "block",
@@ -641,8 +943,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]خطای Multiplayer[/h3]\nپیام خطای پلاگین را برای دیباگ لاگ میکند.",
-			"sid": 256117536761173
+			"text": "[h3]خطای Multiplayer[/h3]\nپیام خطای پلاگین را برای دیباگ لاگ میکند."
 		},
 		{
 			"eventType": "block",
@@ -666,8 +967,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]خروج از اتاق[/h3]\nبازیکن اتاق را ترک کرده؛ فقط لاگ.",
-			"sid": 149768300091171
+			"text": "[h3]خروج از اتاق[/h3]\nبازیکن اتاق را ترک کرده؛ فقط لاگ."
 		},
 		{
 			"eventType": "block",
@@ -691,8 +991,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]Kicked[/h3]\nمعمولا یعنی هاست رفته یا در دسترس نیست و سیگنالینگ بیرونت کرده.",
-			"sid": 400168043278202
+			"text": "[h3]Kicked[/h3]\nمعمولا یعنی هاست رفته یا در دسترس نیست و سیگنالینگ بیرونت کرده."
 		},
 		{
 			"eventType": "block",
@@ -716,8 +1015,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]آمار پهنای‌باند[/h3]\nهر تیک، دریافت و ارسال بایت‌بر‌ثانیه را روی آمار_شبکه نشان میدهد.",
-			"sid": 699623221333200
+			"text": "[h3]آمار پهنای‌باند[/h3]\nهر تیک، دریافت و ارسال بایت‌بر‌ثانیه را روی آمار_شبکه نشان میدهد."
 		},
 		{
 			"eventType": "block",
@@ -742,8 +1040,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]ساخت پد جدید[/h3]\nوقتی اینستنس پد ساخته میشود معمولا برای Peer، اگر PeerID معتبر باشد زاویه/اندازه/شناسه و associate ست میشود.",
-			"sid": 459395658343135
+			"text": "[h3]ساخت پد جدید[/h3]\nوقتی اینستنس پد ساخته میشود معمولا برای Peer، اگر PeerID معتبر باشد زاویه/اندازه/شناسه و associate ست میشود."
 		},
 		{
 			"eventType": "block",
@@ -759,8 +1056,7 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "PeerID غیرخالی یعنی این پد مال آن همکار شبکه است؛ لینکش کن.",
-					"sid": 884815785886327
+					"text": "PeerID غیرخالی یعنی این پد مال آن همکار شبکه است؛ لینکش کن."
 				},
 				{
 					"eventType": "block",
@@ -826,8 +1122,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]ورودی تاچ[/h3]\nاگر انگشتی روی صفحه باشد، Y تاچ را میگیرد و پرچم تاچ_فعال را ۱ میکند.",
-			"sid": 295181505129574
+			"text": "[h3]ورودی تاچ[/h3]\nاگر انگشتی روی صفحه باشد، Y تاچ را میگیرد و پرچم تاچ_فعال را ۱ میکند."
 		},
 		{
 			"eventType": "block",
@@ -867,8 +1162,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]fallback موس[/h3]\nاگر تاچ نبود و هنوز تاچ_فعال صفر است، از Mouse.Y استفاده میکند برای دسکتاپ.",
-			"sid": 830483498487904
+			"text": "[h3]fallback موس[/h3]\nاگر تاچ نبود و هنوز تاچ_فعال صفر است، از Mouse.Y استفاده میکند برای دسکتاپ."
 		},
 		{
 			"eventType": "block",
@@ -904,8 +1198,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]ارسال ورودی کلاینت[/h3]\nدر On Client Update، مقدار ورودی_Y را با تگ y به هاست میفرستد تا پد ریموت حرکت کند.",
-			"sid": 555426685575028
+			"text": "[h3]ارسال ورودی کلاینت[/h3]\nدر On Client Update، مقدار ورودی_Y را با تگ y به هاست میفرستد تا پد ریموت حرکت کند."
 		},
 		{
 			"eventType": "block",
@@ -931,8 +1224,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]همگام وضعیت راند[/h3]\nپیام gamestate-changed میرسد و وضعیت_بازی محلی آپدیت میشود.",
-			"sid": 312150573948501
+			"text": "[h3]همگام وضعیت راند[/h3]\nپیام gamestate-changed میرسد و وضعیت_بازی محلی آپدیت میشود."
 		},
 		{
 			"eventType": "block",
@@ -961,8 +1253,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]رقیب وصل شد فقط هاست[/h3]\nپد سمت راست برای Peer ساخته میشود، UI زمین روشن، شمارش معکوس آماده سپس برو، بعد بولت توپ فعال با زاویه تصادفی، و در نهایت وضعیت شروع_شد.",
-			"sid": 825241389249763
+			"text": "[h3]رقیب وصل شد فقط هاست[/h3]\nپد سمت راست برای Peer ساخته میشود، UI زمین روشن، شمارش معکوس آماده سپس برو، بعد بولت توپ فعال با زاویه تصادفی، و در نهایت وضعیت شروع_شد."
 		},
 		{
 			"eventType": "block",
@@ -1016,6 +1307,15 @@
 					"parameters": {
 						"instance-variable": "شناسه",
 						"value": "Multiplayer.PeerID"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "پد",
+					"sid": 812000000000027,
+					"parameters": {
+						"instance-variable": "ستاره_ها",
+						"value": "3"
 					}
 				},
 				{
@@ -1137,8 +1437,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]تابع نمایش_امتیاز[/h3]\nوضعیت راند را ست و با Reliable Ordered به همه broadcast میکند. قبلا SetGameState بوده.",
-			"sid": 955285406460613
+			"text": "[h3]تابع نمایش_امتیاز[/h3]\nوضعیت راند را ست و با Reliable Ordered به همه broadcast میکند. قبلا SetGameState بوده."
 		},
 		{
 			"functionName": "نمایش_امتیاز",
@@ -1184,8 +1483,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]حرکت پد ریموت روی هاست[/h3]\nهاست برای پدی که مال خودش نیست، Y را از PeerState همکار میخواند و داخل صفحه clamp میکند.",
-			"sid": 994030788523673
+			"text": "[h3]حرکت پد ریموت روی هاست[/h3]\nهاست برای پدی که مال خودش نیست، Y را از PeerState همکار میخواند و داخل صفحه clamp میکند."
 		},
 		{
 			"eventType": "block",
@@ -1230,8 +1528,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]برخورد توپ با پد[/h3]\nبا هر ضربه، سرعت Bullet کمی زیاد میشود تا راند تندتر شود.",
-			"sid": 824198429594795
+			"text": "[h3]برخورد توپ با پد[/h3]\nبا هر ضربه، سرعت Bullet کمی زیاد میشود تا راند تندتر شود."
 		},
 		{
 			"eventType": "block",
@@ -1260,8 +1557,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]گل سمت چپ امتیاز به راست[/h3]\nفقط هاست: اگر توپ از لبه چپ رد شد، به پد غیرمیزبان امتیاز میدهد، ۲ ثانیه صبر، توپ وسط ریست با سرعت پایه.",
-			"sid": 700006740082829
+			"text": "[h3]گل سمت چپ امتیاز به راست[/h3]\nفقط هاست: اگر توپ از لبه چپ رد شد، به پد غیرمیزبان امتیاز میدهد، ۲ ثانیه صبر، توپ وسط ریست با سرعت پایه."
 		},
 		{
 			"eventType": "block",
@@ -1293,6 +1589,26 @@
 						"instance-variable": "شناسه",
 						"comparison": 0,
 						"value": "Multiplayer.HostID"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 812000000000023,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"comparison": 0,
+						"value": "\"شروع_شد\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 812000000000024,
+					"parameters": {
+						"variable": "فاز_سوال",
+						"comparison": 0,
+						"value": "\"خاموش\""
 					}
 				}
 			],
@@ -1347,8 +1663,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]گل سمت راست امتیاز به هاست[/h3]\nفقط هاست: اگر توپ از عرض صفحه رد شد، به پد هاست امتیاز، بعد ریست توپ.",
-			"sid": 436789767731241
+			"text": "[h3]گل سمت راست امتیاز به هاست[/h3]\nفقط هاست: اگر توپ از عرض صفحه رد شد، به پد هاست امتیاز، بعد ریست توپ."
 		},
 		{
 			"eventType": "block",
@@ -1390,6 +1705,26 @@
 						"instance-variable": "شناسه",
 						"comparison": 1,
 						"value": "\"\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 812000000000025,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"comparison": 0,
+						"value": "\"شروع_شد\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 812000000000026,
+					"parameters": {
+						"variable": "فاز_سوال",
+						"comparison": 0,
+						"value": "\"خاموش\""
 					}
 				}
 			],
@@ -1444,8 +1779,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]Peer Connected عمومی[/h3]\nورود همکار را لاگ میکند؛ هاست نام کلاینت را ست میکند، Peer نام هاست را، و نوار امتیاز تازه میشود.",
-			"sid": 319344606658254
+			"text": "[h3]Peer Connected عمومی[/h3]\nورود همکار را لاگ میکند؛ هاست نام کلاینت را ست میکند، Peer نام هاست را، و نوار امتیاز تازه میشود."
 		},
 		{
 			"eventType": "block",
@@ -1469,8 +1803,7 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "هاست: نام کلاینت از آلیاس Peer بدون ۴ رقم آخر.",
-					"sid": 728607209472074
+					"text": "هاست: نام کلاینت از آلیاس Peer بدون ۴ رقم آخر."
 				},
 				{
 					"eventType": "block",
@@ -1504,8 +1837,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Peer: نام هاست از آلیاس، و نمایش المان‌های زمین.",
-					"sid": 200825196325858
+					"text": "Peer: نام هاست از آلیاس، و نمایش المان‌های زمین."
 				},
 				{
 					"eventType": "block",
@@ -1565,8 +1897,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]Peer Disconnected[/h3]\nنام کلاینت پاک، المان‌های زمین مخفی، و پیام منتظر رقیب روی امتیاز.",
-			"sid": 683702149222219
+			"text": "[h3]Peer Disconnected[/h3]\nنام کلاینت پاک، المان‌های زمین مخفی، و پیام منتظر رقیب روی امتیاز."
 		},
 		{
 			"eventType": "block",
@@ -1631,8 +1962,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]حرکت پد خودی[/h3]\nپدی که شناسه‌اش برابر MyID است، مستقیم با ورودی_Y جابه‌جا میشود کنترل لوکال.",
-			"sid": 628382614995192
+			"text": "[h3]حرکت پد خودی[/h3]\nپدی که شناسه‌اش برابر MyID است، مستقیم با ورودی_Y جابه‌جا میشود کنترل لوکال."
 		},
 		{
 			"eventType": "block",
@@ -1662,8 +1992,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]نیمه چپ نوار امتیاز[/h3]\nوقتی راند شروع_شد، امتیاز پد هاست را اول متن مینویسد.",
-			"sid": 492419062040897
+			"text": "[h3]نیمه چپ نوار امتیاز[/h3]\nوقتی راند شروع_شد، امتیاز پد هاست را اول متن مینویسد."
 		},
 		{
 			"eventType": "block",
@@ -1703,8 +2032,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]نیمه راست نوار امتیاز[/h3]\nامتیاز پد مهمان را append میکند تا فرمت هاست n — m کلاینت کامل شود.",
-			"sid": 397614441414366
+			"text": "[h3]نیمه راست نوار امتیاز[/h3]\nامتیاز پد مهمان را append میکند تا فرمت هاست n — m کلاینت کامل شود."
 		},
 		{
 			"eventType": "block",
@@ -1751,6 +2079,3306 @@
 				}
 			],
 			"sid": 377147925770060
+		},
+		{
+			"eventType": "comment",
+			"text": "[h2]EDU_QUIZ_SECTION[/h2]\nفاز آموزشی: ۶ بمب، سوال ۱۵ث + توضیح ۱۵ث، ستاره، پایان بعد از همه بمب‌ها."
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]ستاره اولیه پدها[/h3]"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 812000000000030
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "پد",
+					"sid": 812000000000031,
+					"parameters": {
+						"instance-variable": "ستاره_ها",
+						"value": "3"
+					}
+				}
+			],
+			"sid": 812000000000032
+		},
+		{
+			"functionName": "به‌روزرسانی_ستاره_من",
+			"functionDescription": "ستاره‌های بازیکن محلی را روی UI نشان می‌دهد.",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 812000000000035,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "پد",
+							"sid": 812000000000036,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"comparison": 0,
+								"value": "Multiplayer.MyID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "متن_ستاره",
+							"sid": 812000000000037,
+							"parameters": {
+								"text": "left(\"★★★\", max(0, min(3, پد.ستاره_ها))) & left(\"☆☆☆\", max(0, 3 - پد.ستاره_ها))"
+							}
+						}
+					],
+					"sid": 812000000000038
+				}
+			]
+		},
+		{
+			"functionName": "پر_کردن_سوال",
+			"functionDescription": "متن سوال و گزینه‌ها را بر اساس شماره پر می‌کند.",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "شماره",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 812000000000039
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_اول",
+					"sid": 821000000000001,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_دوم",
+					"sid": 821000000000002,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_سوم",
+					"sid": 821000000000003,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_چهارم",
+					"sid": 821000000000004,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_پنجم",
+					"sid": 821000000000005,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_6",
+					"sid": 821000000000006,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_اول",
+					"sid": 821000000000007,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_قسمت_دوم",
+					"sid": 821000000000008,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_سوم",
+					"sid": 821000000000009,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_چهارم",
+					"sid": 821000000000010,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_پنجم",
+					"sid": 821000000000011,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "جواب_سوال_ششم",
+					"sid": 821000000000012,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 812000000000040,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 821000000000024,
+							"parameters": {
+								"first-value": "شماره",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 821000000000013,
+							"parameters": {
+								"variable": "جواب_درست",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "سوال_اول",
+							"sid": 821000000000014,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 821000000000025,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000015,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000016,
+									"parameters": {
+										"text": "\"16\""
+									}
+								}
+							],
+							"sid": 821000000000017
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000018,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000019,
+									"parameters": {
+										"text": "\"20\""
+									}
+								}
+							],
+							"sid": 821000000000020
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000021,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000022,
+									"parameters": {
+										"text": "\"28\""
+									}
+								}
+							],
+							"sid": 821000000000023
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 821000000000037,
+							"parameters": {
+								"first-value": "شماره",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 821000000000026,
+							"parameters": {
+								"variable": "جواب_درست",
+								"value": "2"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "سوال_دوم",
+							"sid": 821000000000027,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 821000000000038,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000028,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000029,
+									"parameters": {
+										"text": "\"56\""
+									}
+								}
+							],
+							"sid": 821000000000030
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000031,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000032,
+									"parameters": {
+										"text": "\"74\""
+									}
+								}
+							],
+							"sid": 821000000000033
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000034,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000035,
+									"parameters": {
+										"text": "\"66\""
+									}
+								}
+							],
+							"sid": 821000000000036
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 821000000000050,
+							"parameters": {
+								"first-value": "شماره",
+								"comparison": 0,
+								"second-value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 821000000000039,
+							"parameters": {
+								"variable": "جواب_درست",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "سوال_سوم",
+							"sid": 821000000000040,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 821000000000051,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000041,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000042,
+									"parameters": {
+										"text": "\"20\""
+									}
+								}
+							],
+							"sid": 821000000000043
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000044,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000045,
+									"parameters": {
+										"text": "\"40\""
+									}
+								}
+							],
+							"sid": 821000000000046
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000047,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000048,
+									"parameters": {
+										"text": "\"60\""
+									}
+								}
+							],
+							"sid": 821000000000049
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 821000000000063,
+							"parameters": {
+								"first-value": "شماره",
+								"comparison": 0,
+								"second-value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 821000000000052,
+							"parameters": {
+								"variable": "جواب_درست",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "سوال_چهارم",
+							"sid": 821000000000053,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 821000000000064,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000054,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000055,
+									"parameters": {
+										"text": "\"19\""
+									}
+								}
+							],
+							"sid": 821000000000056
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000057,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000058,
+									"parameters": {
+										"text": "\"38\""
+									}
+								}
+							],
+							"sid": 821000000000059
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000060,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000061,
+									"parameters": {
+										"text": "\"84\""
+									}
+								}
+							],
+							"sid": 821000000000062
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 821000000000076,
+							"parameters": {
+								"first-value": "شماره",
+								"comparison": 0,
+								"second-value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 821000000000065,
+							"parameters": {
+								"variable": "جواب_درست",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "سوال_پنجم",
+							"sid": 821000000000066,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 821000000000077,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000067,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000068,
+									"parameters": {
+										"text": "\"4\""
+									}
+								}
+							],
+							"sid": 821000000000069
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000070,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000071,
+									"parameters": {
+										"text": "\"6\""
+									}
+								}
+							],
+							"sid": 821000000000072
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000073,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000074,
+									"parameters": {
+										"text": "\"3\""
+									}
+								}
+							],
+							"sid": 821000000000075
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 821000000000089,
+							"parameters": {
+								"first-value": "شماره",
+								"comparison": 0,
+								"second-value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 821000000000078,
+							"parameters": {
+								"variable": "جواب_درست",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "سوال_6",
+							"sid": 821000000000079,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 821000000000090,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000080,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000081,
+									"parameters": {
+										"text": "\"60\""
+									}
+								}
+							],
+							"sid": 821000000000082
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000083,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000084,
+									"parameters": {
+										"text": "\"35\""
+									}
+								}
+							],
+							"sid": 821000000000085
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000086,
+									"parameters": {
+										"instance-variable": "شماره",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "گزینه_سوال",
+									"sid": 821000000000087,
+									"parameters": {
+										"text": "\"25\""
+									}
+								}
+							],
+							"sid": 821000000000088
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "نمایش_UI_سوال",
+			"functionDescription": "پوشش و سوال و گزینه‌ها و نوار زمان را نشان می‌دهد.",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 821000000000091,
+					"parameters": {
+						"variable": "زمان_سوال",
+						"value": "30"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 821000000000092,
+					"parameters": {
+						"variable": "جواب_من",
+						"value": "-1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 821000000000093,
+					"parameters": {
+						"variable": "فاز_سوال",
+						"value": "\"جواب\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پوشش_سوال",
+					"sid": 821000000000094,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_سوال",
+					"sid": 821000000000095,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_توضیح",
+					"sid": 821000000000096,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_نتیجه",
+					"sid": 821000000000097,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_گزینه",
+					"sid": 821000000000098,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "گزینه_سوال",
+					"sid": 821000000000099,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پس",
+					"sid": 821000000000100,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پر",
+					"sid": 821000000000101,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "نوار_زمان_پر",
+					"sid": 821000000000102,
+					"parameters": {
+						"width": "22",
+						"height": "520"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "نوار_زمان_پر",
+					"sid": 821000000000103,
+					"parameters": {
+						"animation": "\"Animation 1\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_اول",
+					"sid": 821000000000104,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_قسمت_دوم",
+					"sid": 821000000000105,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_سوم",
+					"sid": 821000000000106,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_چهارم",
+					"sid": 821000000000107,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_پنجم",
+					"sid": 821000000000108,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "جواب_سوال_ششم",
+					"sid": 821000000000109,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"callFunction": "پر_کردن_سوال",
+					"sid": 821000000000110,
+					"parameters": [
+						"شماره_سوال"
+					]
+				},
+				{
+					"callFunction": "به‌روزرسانی_ستاره_من",
+					"sid": 821000000000111,
+					"parameters": []
+				}
+			],
+			"sid": 812000000000139
+		},
+		{
+			"functionName": "مخفی_UI_سوال",
+			"functionDescription": "UI سوال را مخفی می‌کند.",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "پوشش_سوال",
+					"sid": 821000000000112,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_سوال",
+					"sid": 821000000000113,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_توضیح",
+					"sid": 821000000000114,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_گزینه",
+					"sid": 821000000000115,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "گزینه_سوال",
+					"sid": 821000000000116,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پس",
+					"sid": 821000000000117,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پر",
+					"sid": 821000000000118,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 821000000000119,
+					"parameters": {
+						"variable": "فاز_سوال",
+						"value": "\"خاموش\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_اول",
+					"sid": 821000000000120,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_دوم",
+					"sid": 821000000000121,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_سوم",
+					"sid": 821000000000122,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_چهارم",
+					"sid": 821000000000123,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_پنجم",
+					"sid": 821000000000124,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_6",
+					"sid": 821000000000125,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_اول",
+					"sid": 821000000000126,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_قسمت_دوم",
+					"sid": 821000000000127,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_سوم",
+					"sid": 821000000000128,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_چهارم",
+					"sid": 821000000000129,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_پنجم",
+					"sid": 821000000000130,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "جواب_سوال_ششم",
+					"sid": 821000000000131,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 812000000000147
+		},
+		{
+			"functionName": "اعمال_نتیجه_سوال",
+			"functionDescription": "روی هاست: امتیاز/ستاره را برای هر دو اعمال و توضیح را پخش می‌کند.",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 821000000000172,
+					"parameters": {
+						"variable": "فاز_سوال",
+						"value": "\"توضیح\""
+					}
+				}
+			],
+			"sid": 812000000000149,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "پد",
+							"sid": 812000000000158,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"comparison": 0,
+								"value": "Multiplayer.HostID"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 812000000000159,
+							"parameters": {
+								"variable": "جواب_هاست",
+								"comparison": 0,
+								"value": "جواب_درست"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "پد",
+							"sid": 812000000000160,
+							"parameters": {
+								"instance-variable": "سکه_ها",
+								"value": "پد.سکه_ها + 1"
+							}
+						}
+					],
+					"sid": 812000000000161
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "پد",
+							"sid": 812000000000162,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"comparison": 0,
+								"value": "Multiplayer.HostID"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 812000000000163,
+							"parameters": {
+								"variable": "جواب_هاست",
+								"comparison": 1,
+								"value": "جواب_درست"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "پد",
+							"sid": 812000000000164,
+							"parameters": {
+								"instance-variable": "ستاره_ها",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "پد",
+							"sid": 812000000000165,
+							"parameters": {
+								"instance-variable": "ستاره_ها",
+								"value": "پد.ستاره_ها - 1"
+							}
+						}
+					],
+					"sid": 812000000000166
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "پد",
+							"sid": 812000000000167,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"comparison": 1,
+								"value": "Multiplayer.HostID"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "پد",
+							"sid": 812000000000168,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"comparison": 1,
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 812000000000169,
+							"parameters": {
+								"variable": "جواب_کلاینت",
+								"comparison": 0,
+								"value": "جواب_درست"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "پد",
+							"sid": 812000000000170,
+							"parameters": {
+								"instance-variable": "سکه_ها",
+								"value": "پد.سکه_ها + 1"
+							}
+						}
+					],
+					"sid": 812000000000171
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "پد",
+							"sid": 812000000000172,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"comparison": 1,
+								"value": "Multiplayer.HostID"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "پد",
+							"sid": 812000000000173,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"comparison": 1,
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 812000000000174,
+							"parameters": {
+								"variable": "جواب_کلاینت",
+								"comparison": 1,
+								"value": "جواب_درست"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "پد",
+							"sid": 812000000000175,
+							"parameters": {
+								"instance-variable": "ستاره_ها",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "پد",
+							"sid": 812000000000176,
+							"parameters": {
+								"instance-variable": "ستاره_ها",
+								"value": "پد.ستاره_ها - 1"
+							}
+						}
+					],
+					"sid": 812000000000177
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 821000000000132,
+							"parameters": {
+								"variable": "فاز_سوال",
+								"value": "\"توضیح\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "دکمه_گزینه",
+							"sid": 821000000000133,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "گزینه_سوال",
+							"sid": 821000000000134,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "متن_سوال",
+							"sid": 821000000000135,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "متن_توضیح",
+							"sid": 821000000000136,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "نوار_زمان_پس",
+							"sid": 821000000000137,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "نوار_زمان_پر",
+							"sid": 821000000000138,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "سوال_اول",
+							"sid": 821000000000139,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "سوال_دوم",
+							"sid": 821000000000140,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "سوال_سوم",
+							"sid": 821000000000141,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "سوال_چهارم",
+							"sid": 821000000000142,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "سوال_پنجم",
+							"sid": 821000000000143,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "سوال_6",
+							"sid": 821000000000144,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "پاسخ_سوال_اول",
+							"sid": 821000000000145,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "پاسخ_قسمت_دوم",
+							"sid": 821000000000146,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "پاسخ_سوال_سوم",
+							"sid": 821000000000147,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "پاسخ_سوال_چهارم",
+							"sid": 821000000000148,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "پاسخ_سوال_پنجم",
+							"sid": 821000000000149,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "جواب_سوال_ششم",
+							"sid": 821000000000150,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "broadcast-message",
+							"objectClass": "Multiplayer",
+							"sid": 821000000000151,
+							"parameters": {
+								"from-id": "\"\"",
+								"tag": "\"quiz-explain\"",
+								"message": "str(شماره_سوال)",
+								"mode": "reliable-ordered"
+							}
+						},
+						{
+							"callFunction": "به‌روزرسانی_ستاره_من",
+							"sid": 821000000000152,
+							"parameters": []
+						}
+					],
+					"sid": 821000000000171,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 821000000000153,
+									"parameters": {
+										"variable": "شماره_سوال",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "پاسخ_سوال_اول",
+									"sid": 821000000000154,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 821000000000155
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 821000000000156,
+									"parameters": {
+										"variable": "شماره_سوال",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "پاسخ_قسمت_دوم",
+									"sid": 821000000000157,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 821000000000158
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 821000000000159,
+									"parameters": {
+										"variable": "شماره_سوال",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "پاسخ_سوال_سوم",
+									"sid": 821000000000160,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 821000000000161
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 821000000000162,
+									"parameters": {
+										"variable": "شماره_سوال",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "پاسخ_سوال_چهارم",
+									"sid": 821000000000163,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 821000000000164
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 821000000000165,
+									"parameters": {
+										"variable": "شماره_سوال",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "پاسخ_سوال_پنجم",
+									"sid": 821000000000166,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 821000000000167
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 821000000000168,
+									"parameters": {
+										"variable": "شماره_سوال",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "جواب_سوال_ششم",
+									"sid": 821000000000169,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 821000000000170
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "شروع_فاز_سوال_هاست",
+			"functionDescription": "هاست فاز سوال را اجرا می‌کند: ۱۵ث جواب، نتیجه، ۱۵ث توضیح، ادامه یا پایان.",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "شماره",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 812000000000187
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 812000000000188,
+					"parameters": {
+						"variable": "شماره_سوال",
+						"value": "شماره"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 812000000000189,
+					"parameters": {
+						"variable": "جواب_هاست",
+						"value": "-1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 812000000000190,
+					"parameters": {
+						"variable": "جواب_کلاینت",
+						"value": "-1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 812000000000191,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"value": "\"سوال\""
+					}
+				},
+				{
+					"id": "broadcast-message",
+					"objectClass": "Multiplayer",
+					"sid": 812000000000192,
+					"parameters": {
+						"from-id": "\"\"",
+						"tag": "\"gamestate-changed\"",
+						"message": "\"سوال\"",
+						"mode": "reliable-ordered"
+					}
+				},
+				{
+					"id": "broadcast-message",
+					"objectClass": "Multiplayer",
+					"sid": 812000000000193,
+					"parameters": {
+						"from-id": "\"\"",
+						"tag": "\"quiz-start\"",
+						"message": "str(شماره)",
+						"mode": "reliable-ordered"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "توپ",
+					"sid": 812000000000194,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"callFunction": "نمایش_UI_سوال",
+					"sid": 812000000000195
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 812000000000196,
+					"parameters": {
+						"seconds": "30",
+						"use-timescale": true
+					}
+				},
+				{
+					"callFunction": "اعمال_نتیجه_سوال",
+					"sid": 812000000000197
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 812000000000198,
+					"parameters": {
+						"seconds": "15",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 812000000000199,
+					"parameters": {
+						"variable": "بمب_باقی",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 812000000000200,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 812000000000201,
+							"parameters": {
+								"variable": "بمب_باقی",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 812000000000202,
+							"parameters": {
+								"variable": "فاز_سوال",
+								"value": "\"پایان\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 812000000000203,
+							"parameters": {
+								"variable": "وضعیت_بازی",
+								"value": "\"پایان\""
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "توپ",
+							"sid": 812000000000204,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "پوشش_سوال",
+							"sid": 812000000000205,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "متن_توضیح",
+							"sid": 812000000000206,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "متن_سوال",
+							"sid": 812000000000207,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "گزینه_سوال",
+							"sid": 812000000000208,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "متن_نتیجه",
+							"sid": 812000000000209,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "broadcast-message",
+							"objectClass": "Multiplayer",
+							"sid": 812000000000210,
+							"parameters": {
+								"from-id": "\"\"",
+								"tag": "\"game-over\"",
+								"message": "\"1\"",
+								"mode": "reliable-ordered"
+							}
+						},
+						{
+							"callFunction": "نمایش_صفحه_پایان",
+							"sid": 812000000000211
+						}
+					],
+					"sid": 812000000000212
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 812000000000213
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "مخفی_UI_سوال",
+							"sid": 812000000000214
+						},
+						{
+							"id": "set-position",
+							"objectClass": "توپ",
+							"sid": 812000000000215,
+							"parameters": {
+								"x": "LayoutWidth / 2",
+								"y": "LayoutHeight / 2"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "توپ",
+							"sid": 812000000000216,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "توپ",
+							"sid": 812000000000217,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "300"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "توپ",
+							"sid": 812000000000218,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "choose(random(-35, 35), 180 + random(-35, 35))"
+							}
+						},
+						{
+							"callFunction": "نمایش_امتیاز",
+							"sid": 812000000000219,
+							"parameters": [
+								"\"شروع_شد\""
+							]
+						},
+						{
+							"id": "broadcast-message",
+							"objectClass": "Multiplayer",
+							"sid": 812000000000220,
+							"parameters": {
+								"from-id": "\"\"",
+								"tag": "\"quiz-resume\"",
+								"message": "\"1\"",
+								"mode": "reliable-ordered"
+							}
+						}
+					],
+					"sid": 812000000000221
+				}
+			]
+		},
+		{
+			"functionName": "نمایش_صفحه_پایان",
+			"functionDescription": "گل و ستاره دو بازیکن را نشان می‌دهد.",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_اول",
+					"sid": 821000000050001,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_دوم",
+					"sid": 821000000050002,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_سوم",
+					"sid": 821000000050003,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_چهارم",
+					"sid": 821000000050004,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_پنجم",
+					"sid": 821000000050005,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_6",
+					"sid": 821000000050006,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_اول",
+					"sid": 821000000050007,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_قسمت_دوم",
+					"sid": 821000000050008,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_سوم",
+					"sid": 821000000050009,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_چهارم",
+					"sid": 821000000050010,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_پنجم",
+					"sid": 821000000050011,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "جواب_سوال_ششم",
+					"sid": 821000000050012,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_گزینه",
+					"sid": 821000000050013,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "گزینه_سوال",
+					"sid": 821000000050014,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_سوال",
+					"sid": 821000000050015,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_توضیح",
+					"sid": 821000000050016,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پس",
+					"sid": 821000000050017,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پر",
+					"sid": 821000000050018,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پوشش_سوال",
+					"sid": 812000000000222,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_نتیجه",
+					"sid": 812000000000223,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پس",
+					"sid": 812000000000224,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پر",
+					"sid": 812000000000225,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "گزینه_سوال",
+					"sid": 812000000000226,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_سوال",
+					"sid": 812000000000227,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_توضیح",
+					"sid": 812000000000228,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 812000000000229,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "پد",
+							"sid": 812000000000230,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"comparison": 0,
+								"value": "Multiplayer.HostID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "متن_نتیجه",
+							"sid": 812000000000231,
+							"parameters": {
+								"text": "\"🏁 پایان بازی!\" & newline & newline & نام_هاست & newline & \"گل: \" & پد.سکه_ها & \" | ستاره: \" & پد.ستاره_ها & newline & newline"
+							}
+						}
+					],
+					"sid": 812000000000232
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "پد",
+							"sid": 812000000000233,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"comparison": 1,
+								"value": "Multiplayer.HostID"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "پد",
+							"sid": 812000000000234,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"comparison": 1,
+								"value": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "append-text",
+							"objectClass": "متن_نتیجه",
+							"sid": 812000000000235,
+							"parameters": {
+								"text": "نام_کلاینت & newline & \"گل: \" & پد.سکه_ها & \" | ستاره: \" & پد.ستاره_ها"
+							}
+						}
+					],
+					"sid": 812000000000236
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]برخورد توپ با بمب[/h3]\nفقط هاست؛ بمب را نابود و فاز سوال را شروع می‌کند."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "توپ",
+					"sid": 812000000000239,
+					"parameters": {
+						"object": "بمب"
+					}
+				},
+				{
+					"id": "is-host",
+					"objectClass": "Multiplayer",
+					"sid": 812000000000238
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 812000000000240,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"comparison": 0,
+						"value": "\"شروع_شد\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 812000000000241,
+					"parameters": {
+						"variable": "فاز_سوال",
+						"comparison": 0,
+						"value": "\"خاموش\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 812000000000242,
+					"parameters": {
+						"variable": "شماره_سوال",
+						"value": "بمب.شماره"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "بمب",
+					"sid": 812000000000243
+				},
+				{
+					"callFunction": "شروع_فاز_سوال_هاست",
+					"sid": 812000000000244,
+					"parameters": [
+						"شماره_سوال"
+					]
+				}
+			],
+			"sid": 812000000000245
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]دریافت شروع سوال[/h3]"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-message",
+					"objectClass": "Multiplayer",
+					"sid": 812000000000247,
+					"parameters": {
+						"tag": "\"quiz-start\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 812000000000248,
+					"parameters": {
+						"variable": "شماره_سوال",
+						"value": "int(Multiplayer.Message)"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 812000000000249,
+					"parameters": {
+						"variable": "جواب_من",
+						"value": "-1"
+					}
+				}
+			],
+			"sid": 812000000000256,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "بمب",
+							"sid": 812000000000250,
+							"parameters": {
+								"instance-variable": "شماره",
+								"comparison": 0,
+								"value": "شماره_سوال"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "بمب",
+							"sid": 812000000000251
+						}
+					],
+					"sid": 812000000000252
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 812000000000253,
+							"parameters": {
+								"first-value": "Multiplayer.MyID",
+								"comparison": 1,
+								"second-value": "Multiplayer.HostID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "نمایش_UI_سوال",
+							"sid": 812000000000254
+						}
+					],
+					"sid": 812000000000255
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-message",
+					"objectClass": "Multiplayer",
+					"sid": 812000000000257,
+					"parameters": {
+						"tag": "\"quiz-explain\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 821000000000186,
+					"parameters": {
+						"variable": "فاز_سوال",
+						"value": "\"توضیح\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 821000000000187,
+					"parameters": {
+						"variable": "شماره_سوال",
+						"value": "int(Multiplayer.Message)"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_گزینه",
+					"sid": 821000000000188,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "گزینه_سوال",
+					"sid": 821000000000189,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_سوال",
+					"sid": 821000000000190,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_توضیح",
+					"sid": 821000000000191,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پس",
+					"sid": 821000000000192,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پر",
+					"sid": 821000000000193,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_اول",
+					"sid": 821000000000194,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_دوم",
+					"sid": 821000000000195,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_سوم",
+					"sid": 821000000000196,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_چهارم",
+					"sid": 821000000000197,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_پنجم",
+					"sid": 821000000000198,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "سوال_6",
+					"sid": 821000000000199,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_اول",
+					"sid": 821000000000200,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_قسمت_دوم",
+					"sid": 821000000000201,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_سوم",
+					"sid": 821000000000202,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_چهارم",
+					"sid": 821000000000203,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پاسخ_سوال_پنجم",
+					"sid": 821000000000204,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "جواب_سوال_ششم",
+					"sid": 821000000000205,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"callFunction": "به‌روزرسانی_ستاره_من",
+					"sid": 821000000000206,
+					"parameters": []
+				}
+			],
+			"sid": 812000000000266,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 821000000000207,
+							"parameters": {
+								"variable": "شماره_سوال",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "پاسخ_سوال_اول",
+							"sid": 821000000000208,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 821000000000209
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 821000000000210,
+							"parameters": {
+								"variable": "شماره_سوال",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "پاسخ_قسمت_دوم",
+							"sid": 821000000000211,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 821000000000212
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 821000000000213,
+							"parameters": {
+								"variable": "شماره_سوال",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "پاسخ_سوال_سوم",
+							"sid": 821000000000214,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 821000000000215
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 821000000000216,
+							"parameters": {
+								"variable": "شماره_سوال",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "پاسخ_سوال_چهارم",
+							"sid": 821000000000217,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 821000000000218
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 821000000000219,
+							"parameters": {
+								"variable": "شماره_سوال",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "پاسخ_سوال_پنجم",
+							"sid": 821000000000220,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 821000000000221
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 821000000000222,
+							"parameters": {
+								"variable": "شماره_سوال",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "جواب_سوال_ششم",
+							"sid": 821000000000223,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 821000000000224
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-message",
+					"objectClass": "Multiplayer",
+					"sid": 812000000000267,
+					"parameters": {
+						"tag": "\"quiz-resume\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "مخفی_UI_سوال",
+					"sid": 812000000000268
+				}
+			],
+			"sid": 812000000000269
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-message",
+					"objectClass": "Multiplayer",
+					"sid": 812000000000270,
+					"parameters": {
+						"tag": "\"game-over\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 812000000000271,
+					"parameters": {
+						"variable": "فاز_سوال",
+						"value": "\"پایان\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 812000000000272,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"value": "\"پایان\""
+					}
+				},
+				{
+					"callFunction": "نمایش_صفحه_پایان",
+					"sid": 812000000000273
+				}
+			],
+			"sid": 812000000000274
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]انتخاب گزینه[/h3]"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-message",
+					"objectClass": "Multiplayer",
+					"sid": 812000000000300,
+					"parameters": {
+						"tag": "\"quiz-answer\""
+					}
+				},
+				{
+					"id": "is-host",
+					"objectClass": "Multiplayer",
+					"sid": 812000000000301
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 812000000000302,
+					"parameters": {
+						"variable": "جواب_کلاینت",
+						"value": "int(Multiplayer.Message)"
+					}
+				}
+			],
+			"sid": 812000000000303
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]نوار زمان سوال[/h3]"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 812000000000305,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 812000000000306,
+					"parameters": {
+						"variable": "فاز_سوال",
+						"comparison": 0,
+						"value": "\"جواب\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 812000000000307,
+					"parameters": {
+						"variable": "زمان_سوال",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 812000000000308,
+					"parameters": {
+						"variable": "زمان_سوال",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 812000000000309
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 812000000000310
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 812000000000311,
+					"parameters": {
+						"variable": "فاز_سوال",
+						"comparison": 0,
+						"value": "\"جواب\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "نوار_زمان_پر",
+					"sid": 812000000000312,
+					"parameters": {
+						"width": "22",
+						"height": "520 * (زمان_سوال / 30)"
+					}
+				}
+			],
+			"sid": 812000000000316,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 812000000000313,
+							"parameters": {
+								"variable": "زمان_سوال",
+								"comparison": 3,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "نوار_زمان_پر",
+							"sid": 812000000000314,
+							"parameters": {
+								"animation": "\"هشدار\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 812000000000315
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 812000000000317,
+					"parameters": {
+						"interval-seconds": "0.5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "به‌روزرسانی_ستاره_من",
+					"sid": 812000000000318
+				}
+			],
+			"sid": 812000000000319
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]کلیک دکمه گزینه (فقط عدد)[/h3]",
+			"sid": 821000000000225
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 821000000000226,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "دکمه_گزینه"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 821000000000227,
+					"parameters": {
+						"variable": "فاز_سوال",
+						"comparison": 0,
+						"value": "\"جواب\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 821000000000228,
+					"parameters": {
+						"variable": "جواب_من",
+						"comparison": 0,
+						"value": "-1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 821000000000229,
+					"parameters": {
+						"variable": "جواب_من",
+						"value": "دکمه_گزینه.شماره"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_گزینه",
+					"sid": 821000000000230,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "گزینه_سوال",
+					"sid": 821000000000231,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 821000000000238,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-host",
+							"objectClass": "Multiplayer",
+							"sid": 821000000000232
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 821000000000233,
+							"parameters": {
+								"variable": "جواب_هاست",
+								"value": "جواب_من"
+							}
+						}
+					],
+					"sid": 821000000000234
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 821000000000235
+						}
+					],
+					"actions": [
+						{
+							"id": "send-message",
+							"objectClass": "Multiplayer",
+							"sid": 821000000000236,
+							"parameters": {
+								"peer-id": "Multiplayer.HostID",
+								"tag": "\"quiz-answer\"",
+								"message": "str(جواب_من)",
+								"mode": "reliable-ordered"
+							}
+						}
+					],
+					"sid": 821000000000237
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 821000000000239,
+					"parameters": {
+						"object": "دکمه_گزینه"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 821000000000240,
+					"parameters": {
+						"variable": "فاز_سوال",
+						"comparison": 0,
+						"value": "\"جواب\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 821000000000241,
+					"parameters": {
+						"variable": "جواب_من",
+						"comparison": 0,
+						"value": "-1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 821000000000242,
+					"parameters": {
+						"variable": "جواب_من",
+						"value": "دکمه_گزینه.شماره"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_گزینه",
+					"sid": 821000000000243,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "گزینه_سوال",
+					"sid": 821000000000244,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 821000000000251,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-host",
+							"objectClass": "Multiplayer",
+							"sid": 821000000000245
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 821000000000246,
+							"parameters": {
+								"variable": "جواب_هاست",
+								"value": "جواب_من"
+							}
+						}
+					],
+					"sid": 821000000000247
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 821000000000248
+						}
+					],
+					"actions": [
+						{
+							"id": "send-message",
+							"objectClass": "Multiplayer",
+							"sid": 821000000000249,
+							"parameters": {
+								"peer-id": "Multiplayer.HostID",
+								"tag": "\"quiz-answer\"",
+								"message": "str(جواب_من)",
+								"mode": "reliable-ordered"
+							}
+						}
+					],
+					"sid": 821000000000250
+				}
+			]
 		}
 	],
 	"sid": 581855882183268

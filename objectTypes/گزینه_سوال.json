@@ -1,0 +1,18 @@
+{
+	"name": "گزینه_سوال",
+	"plugin-id": "Text",
+	"sid": 811000000000030,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "شماره",
+			"type": "number",
+			"desc": "0/1/2",
+			"show": true,
+			"sid": 811000000000031
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

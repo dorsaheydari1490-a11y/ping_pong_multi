@@ -1,0 +1,56 @@
+{
+	"name": "سوال_اول",
+	"plugin-id": "Sprite",
+	"sid": 819016354214694,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 802,
+						"height": 322,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3719862,
+						"collisionPoly": {
+							"points": [
+								0.15087281795511223,
+								0.006211180124223602,
+								0.9775561097256857,
+								0.055900621118012424,
+								0.9638403990024937,
+								0.953416149068323,
+								0.017456359102244388,
+								0.9968944099378882,
+								0.0024937655860349127,
+								0.8695652173913043,
+								0.0798004987531172,
+								0.009316770186335404
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 470399901764418,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

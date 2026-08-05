@@ -1,0 +1,10 @@
+{
+	"name": "متن_توضیح",
+	"plugin-id": "Text",
+	"sid": 811000000000040,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}
