@@ -489,11 +489,27 @@
 					}
 				},
 				{
-					"id": "set-text",
-					"objectClass": "متن_ستاره",
-					"sid": 812000000000022,
+					"id": "set-visible",
+					"objectClass": "ستاره",
+					"sid": 812100000000310,
 					"parameters": {
-						"text": "\"★★★\""
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره2",
+					"sid": 812100000000311,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره3",
+					"sid": 812100000000312,
+					"parameters": {
+						"visibility": "invisible"
 					}
 				},
 				{
@@ -2154,7 +2170,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h2]EDU_QUIZ_SECTION[/h2]\nفاز آموزشی: ۶ بمب، سوال ۱۵ث + توضیح ۱۵ث، ستاره، پایان بعد از همه بمب‌ها."
+			"text": "[h2]EDU_QUIZ_SECTION[/h2]\nفاز آموزشی: ۶ بمب، سوال ۱۵ث + توضیح ۱۵ث، ستاره اسپریتی (مثل چهار راز)، پایان بعد از همه بمب‌ها."
 		},
 		{
 			"eventType": "comment",
@@ -2184,7 +2200,7 @@
 		},
 		{
 			"functionName": "به‌روزرسانی_ستاره_من",
-			"functionDescription": "ستاره‌های بازیکن محلی را روی UI نشان می‌دهد.",
+			"functionDescription": "ستاره‌ها در فاز جواب و توضیح سوال نمایش داده می‌شوند تا کم شدن ستاره دیده شود.",
 			"functionCategory": "",
 			"functionReturnType": "none",
 			"functionCopyPicked": false,
@@ -2199,6 +2215,100 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 812100000000360,
+							"parameters": {
+								"variable": "فاز_سوال",
+								"comparison": 0,
+								"value": "\"خاموش\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "ستاره",
+							"sid": 812100000000361,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ستاره2",
+							"sid": 812100000000362,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ستاره3",
+							"sid": 812100000000363,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 812100000000364
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 812100000000460,
+							"parameters": {
+								"variable": "فاز_سوال",
+								"comparison": 0,
+								"value": "\"پایان\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "ستاره",
+							"sid": 812100000000461,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ستاره2",
+							"sid": 812100000000462,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ستاره3",
+							"sid": 812100000000463,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 812100000000464
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 812100000000365,
+							"parameters": {
+								"variable": "فاز_سوال",
+								"comparison": 0,
+								"value": "\"جواب\""
+							}
+						},
+						{
 							"id": "compare-instance-variable",
 							"objectClass": "پد",
 							"sid": 812000000000036,
@@ -2209,17 +2319,375 @@
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 812000000000038,
+					"children": [
 						{
-							"id": "set-text",
-							"objectClass": "متن_ستاره",
-							"sid": 812000000000037,
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "پد",
+									"sid": 812100000000320,
+									"parameters": {
+										"instance-variable": "ستاره_ها",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره",
+									"sid": 812100000000321,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره2",
+									"sid": 812100000000322,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره3",
+									"sid": 812100000000323,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 812100000000324
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "پد",
+									"sid": 812100000000325,
+									"parameters": {
+										"instance-variable": "ستاره_ها",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره",
+									"sid": 812100000000326,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره2",
+									"sid": 812100000000340,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره3",
+									"sid": 812100000000341,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 812100000000327
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "پد",
+									"sid": 812100000000328,
+									"parameters": {
+										"instance-variable": "ستاره_ها",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره",
+									"sid": 812100000000329,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره2",
+									"sid": 812100000000330,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره3",
+									"sid": 812100000000342,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 812100000000331
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "پد",
+									"sid": 812100000000332,
+									"parameters": {
+										"instance-variable": "ستاره_ها",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره",
+									"sid": 812100000000333,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره2",
+									"sid": 812100000000334,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره3",
+									"sid": 812100000000335,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 812100000000336
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 812100000000470,
 							"parameters": {
-								"text": "left(\"★★★\", max(0, min(3, پد.ستاره_ها))) & left(\"☆☆☆\", max(0, 3 - پد.ستاره_ها))"
+								"variable": "فاز_سوال",
+								"comparison": 0,
+								"value": "\"توضیح\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "پد",
+							"sid": 812100000000471,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"comparison": 0,
+								"value": "Multiplayer.MyID"
 							}
 						}
 					],
-					"sid": 812000000000038
+					"actions": [],
+					"sid": 812100000000472,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "پد",
+									"sid": 812100000000410,
+									"parameters": {
+										"instance-variable": "ستاره_ها",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره",
+									"sid": 812100000000420,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره2",
+									"sid": 812100000000421,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره3",
+									"sid": 812100000000422,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 812100000000400
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "پد",
+									"sid": 812100000000411,
+									"parameters": {
+										"instance-variable": "ستاره_ها",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره",
+									"sid": 812100000000430,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره2",
+									"sid": 812100000000431,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره3",
+									"sid": 812100000000432,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 812100000000401
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "پد",
+									"sid": 812100000000412,
+									"parameters": {
+										"instance-variable": "ستاره_ها",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره",
+									"sid": 812100000000440,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره2",
+									"sid": 812100000000441,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره3",
+									"sid": 812100000000442,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 812100000000402
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "پد",
+									"sid": 812100000000413,
+									"parameters": {
+										"instance-variable": "ستاره_ها",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره",
+									"sid": 812100000000450,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره2",
+									"sid": 812100000000451,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ستاره3",
+									"sid": 812100000000452,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 812100000000403
+						}
+					]
 				}
 			]
 		},
@@ -3383,6 +3851,30 @@
 					"id": "set-visible",
 					"objectClass": "جواب_سوال_ششم",
 					"sid": 821000000000131,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره",
+					"sid": 812100000000350,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره2",
+					"sid": 812100000000351,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره3",
+					"sid": 812100000000352,
 					"parameters": {
 						"visibility": "invisible"
 					}
