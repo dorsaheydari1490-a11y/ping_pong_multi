@@ -1,0 +1,56 @@
+{
+	"name": "ستاره3",
+	"plugin-id": "Sprite",
+	"sid": 146165203995985,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 792,
+						"height": 790,
+						"originX": 0.46085858585858586,
+						"originY": 0.579746835443038,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4022962,
+						"collisionPoly": {
+							"points": [
+								0.8409090909090909,
+								0.002531645569620253,
+								1,
+								0.03291139240506329,
+								0.6931818181818182,
+								0.9987341772151899,
+								0.1376262626262626,
+								0.9240506329113924,
+								0.045454545454545456,
+								0.37848101265822787,
+								0.4255050505050505,
+								0.08354430379746836
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 157718051689623,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
