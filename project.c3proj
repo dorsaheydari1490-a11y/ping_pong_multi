@@ -110,6 +110,8 @@
 			"Touch",
 			"Keyboard",
 			"نمایش_امتیاز",
+			"نام_امتیاز_کلاینت",
+			"نام_امتیاز_هاست",
 			"HalfHost",
 			"HalfClient",
 			"CenterLine",
@@ -337,7 +339,7 @@
 			0
 		],
 		"orientations": "landscape",
-		"webgpu": "auto",
+		"webgpu": "no",
 		"multitexturing": "auto",
 		"gpuPreference": "high-performance",
 		"framerateMode": "vsync",

@@ -909,7 +909,23 @@
 							"objectClass": "نمایش_امتیاز",
 							"sid": 241655808430482,
 							"parameters": {
-								"text": "(Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"  0 — 0  \" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت"
+								"text": "\"0 — 0\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نام_امتیاز_هاست",
+							"sid": 830000000000101,
+							"parameters": {
+								"text": "\"⁦\" & (Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"⁩\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نام_امتیاز_کلاینت",
+							"sid": 830000000000102,
+							"parameters": {
+								"text": "\"⁦\" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت & \"⁩\""
 							}
 						}
 					],
@@ -1365,7 +1381,23 @@
 					"objectClass": "نمایش_امتیاز",
 					"sid": 683837288104543,
 					"parameters": {
-						"text": "(Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"  0 — 0  \" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت"
+						"text": "\"0 — 0\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نام_امتیاز_هاست",
+					"sid": 830000000000111,
+					"parameters": {
+						"text": "\"⁦\" & (Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"⁩\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نام_امتیاز_کلاینت",
+					"sid": 830000000000112,
+					"parameters": {
+						"text": "\"⁦\" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت & \"⁩\""
 					}
 				},
 				{
@@ -1582,16 +1614,6 @@
 					"sid": 198436970072225
 				},
 				{
-					"id": "compare-instance-variable",
-					"objectClass": "پد",
-					"sid": 995801735462493,
-					"parameters": {
-						"instance-variable": "شناسه",
-						"comparison": 0,
-						"value": "Multiplayer.HostID"
-					}
-				},
-				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
 					"sid": 812000000000023,
@@ -1609,6 +1631,15 @@
 						"variable": "فاز_سوال",
 						"comparison": 0,
 						"value": "\"خاموش\""
+					}
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "پد",
+					"sid": 995801735462493,
+					"parameters": {
+						"comparison": 4,
+						"x-co-ordinate": "LayoutWidth / 2"
 					}
 				}
 			],
@@ -1688,26 +1719,6 @@
 					"sid": 764184370869715
 				},
 				{
-					"id": "compare-instance-variable",
-					"objectClass": "پد",
-					"sid": 816866066061835,
-					"parameters": {
-						"instance-variable": "شناسه",
-						"comparison": 1,
-						"value": "Multiplayer.HostID"
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "پد",
-					"sid": 988719252568547,
-					"parameters": {
-						"instance-variable": "شناسه",
-						"comparison": 1,
-						"value": "\"\""
-					}
-				},
-				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
 					"sid": 812000000000025,
@@ -1725,6 +1736,15 @@
 						"variable": "فاز_سوال",
 						"comparison": 0,
 						"value": "\"خاموش\""
+					}
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "پد",
+					"sid": 816866066061835,
+					"parameters": {
+						"comparison": 2,
+						"x-co-ordinate": "LayoutWidth / 2"
 					}
 				}
 			],
@@ -1829,7 +1849,23 @@
 							"objectClass": "نمایش_امتیاز",
 							"sid": 213232380163071,
 							"parameters": {
-								"text": "(Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"  0 — 0  \" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت"
+								"text": "\"0 — 0\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نام_امتیاز_هاست",
+							"sid": 830000000000121,
+							"parameters": {
+								"text": "\"⁦\" & (Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"⁩\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نام_امتیاز_کلاینت",
+							"sid": 830000000000122,
+							"parameters": {
+								"text": "\"⁦\" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت & \"⁩\""
 							}
 						}
 					],
@@ -1887,7 +1923,23 @@
 							"objectClass": "نمایش_امتیاز",
 							"sid": 213232380163073,
 							"parameters": {
-								"text": "(Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"  0 — 0  \" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت"
+								"text": "\"0 — 0\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نام_امتیاز_هاست",
+							"sid": 830000000000131,
+							"parameters": {
+								"text": "\"⁦\" & (Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"⁩\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نام_امتیاز_کلاینت",
+							"sid": 830000000000132,
+							"parameters": {
+								"text": "\"⁦\" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت & \"⁩\""
 							}
 						}
 					],
@@ -1956,6 +2008,22 @@
 					"parameters": {
 						"text": "\"منتظر یه رقیب...\""
 					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نام_امتیاز_هاست",
+					"sid": 830000000000141,
+					"parameters": {
+						"text": "\"\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نام_امتیاز_کلاینت",
+					"sid": 830000000000142,
+					"parameters": {
+						"text": "\"\""
+					}
 				}
 			],
 			"sid": 289005437073951
@@ -1992,7 +2060,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]نیمه چپ نوار امتیاز[/h3]\nوقتی راند شروع_شد، امتیاز پد هاست را اول متن مینویسد."
+			"text": "[h3]امتیاز وسط + نام هاست[/h3]\nامتیاز پد چپ را در وسط می‌نویسد و نام هاست را در تکست چپ (راست‌چین) ست می‌کند."
 		},
 		{
 			"eventType": "block",
@@ -2008,13 +2076,12 @@
 					}
 				},
 				{
-					"id": "compare-instance-variable",
+					"id": "compare-x",
 					"objectClass": "پد",
 					"sid": 201091921667105,
 					"parameters": {
-						"instance-variable": "شناسه",
-						"comparison": 0,
-						"value": "Multiplayer.HostID"
+						"comparison": 2,
+						"x-co-ordinate": "LayoutWidth / 2"
 					}
 				}
 			],
@@ -2024,7 +2091,15 @@
 					"objectClass": "نمایش_امتیاز",
 					"sid": 404913697816928,
 					"parameters": {
-						"text": "(Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"  \" & پد.سکه_ها & \" — \""
+						"text": "پد.سکه_ها & \" — \""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نام_امتیاز_هاست",
+					"sid": 830000000000201,
+					"parameters": {
+						"text": "\"⁦\" & (Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"⁩\""
 					}
 				}
 			],
@@ -2032,7 +2107,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]نیمه راست نوار امتیاز[/h3]\nامتیاز پد مهمان را append میکند تا فرمت هاست n — m کلاینت کامل شود."
+			"text": "[h3]امتیاز وسط + نام کلاینت[/h3]\nامتیاز پد راست را به وسط append می‌کند و نام کلاینت را در تکست راست (چپ‌چین) ست می‌کند."
 		},
 		{
 			"eventType": "block",
@@ -2048,23 +2123,12 @@
 					}
 				},
 				{
-					"id": "compare-instance-variable",
+					"id": "compare-x",
 					"objectClass": "پد",
 					"sid": 534421809171263,
 					"parameters": {
-						"instance-variable": "شناسه",
-						"comparison": 1,
-						"value": "Multiplayer.HostID"
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "پد",
-					"sid": 328953520924805,
-					"parameters": {
-						"instance-variable": "شناسه",
-						"comparison": 1,
-						"value": "\"\""
+						"comparison": 4,
+						"x-co-ordinate": "LayoutWidth / 2"
 					}
 				}
 			],
@@ -2074,7 +2138,15 @@
 					"objectClass": "نمایش_امتیاز",
 					"sid": 334520557707109,
 					"parameters": {
-						"text": "پد.سکه_ها & \"  \" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت"
+						"text": "پد.سکه_ها"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نام_امتیاز_کلاینت",
+					"sid": 830000000000202,
+					"parameters": {
+						"text": "\"⁦\" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت & \"⁩\""
 					}
 				}
 			],
