@@ -216,10 +216,10 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 459641470185987,
+					"sid": 516252939791706,
 					"parameters": {
 						"audio-file": {
-							"path": "8-Bit Ping Pong"
+							"path": "Star Cannon"
 						},
 						"loop": "looping",
 						"volume": "0",

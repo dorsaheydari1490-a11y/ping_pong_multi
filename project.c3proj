@@ -147,17 +147,17 @@
 		"music": {
 			"items": [
 				{
-					"name": "ping_pong.webm",
+					"name": "8-Bit Ping Pong start.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 238322773410460,
+					"sid": 682733836769237,
 					"file-info": {
 						"purpose": "none"
 					}
 				},
 				{
-					"name": "8-Bit Ping Pong.webm",
+					"name": "Star Cannon.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 832769938069001,
+					"sid": 362795060042669,
 					"file-info": {
 						"purpose": "none"
 					}
