@@ -1,7 +1,7 @@
 {
-	"name": "پاسخ_سوال_سوم",
+	"name": "دکمه_شخصیت_دایره",
 	"plugin-id": "Sprite",
-	"sid": 735642483938930,
+	"sid": 744611625195575,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
@@ -12,21 +12,33 @@
 			{
 				"frames": [
 					{
-						"width": 1376,
-						"height": 768,
+						"width": 143,
+						"height": 142,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"fileType": "image/jpeg",
-						"imageSpriteId": 4543267,
+						"fileType": "image/png",
+						"imageSpriteId": 292036,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0,
+								1,
+								1,
+								0,
+								1
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 117495596962636,
+				"sid": 560600226909948,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -1,7 +1,7 @@
 {
-	"name": "متن_نتیجه",
+	"name": "متن_انتخاب_شخصیت",
 	"plugin-id": "Text",
-	"sid": 811000000000060,
+	"sid": 821000000000401,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],

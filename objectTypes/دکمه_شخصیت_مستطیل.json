@@ -1,7 +1,7 @@
 {
-	"name": "سوال_چهارم",
+	"name": "دکمه_شخصیت_مستطیل",
 	"plugin-id": "Sprite",
-	"sid": 918720972348424,
+	"sid": 910062724384477,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
@@ -12,33 +12,25 @@
 			{
 				"frames": [
 					{
-						"width": 800,
-						"height": 320,
+						"width": 195,
+						"height": 127,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 4296626,
+						"imageSpriteId": 3522438,
 						"collisionPoly": {
 							"points": [
-								0.09875,
-								0.003125,
-								0.95875,
-								0.053125,
-								0.99875,
-								0.134375,
-								0.9975,
-								0.778125,
-								0.97125,
-								0.921875,
-								0.89625,
-								0.9875,
-								0.02,
-								0.9125,
-								0.00375,
-								0.1125
+								0,
+								0,
+								1,
+								0,
+								1,
+								1,
+								0,
+								1
 							]
 						},
 						"useCollisionPoly": true,
@@ -46,7 +38,7 @@
 						"tag": ""
 					}
 				],
-				"sid": 707964425239238,
+				"sid": 484892192256624,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

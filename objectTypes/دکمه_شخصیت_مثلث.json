@@ -1,7 +1,7 @@
 {
-	"name": "سلام",
+	"name": "دکمه_شخصیت_مثلث",
 	"plugin-id": "Sprite",
-	"sid": 541522454280378,
+	"sid": 869859778103754,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
@@ -12,33 +12,25 @@
 			{
 				"frames": [
 					{
-						"width": 637,
-						"height": 124,
-						"originX": 0.499225583090379,
-						"originY": 0.5984295415959253,
+						"width": 151,
+						"height": 134,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 2890146,
+						"imageSpriteId": 2244758,
 						"collisionPoly": {
 							"points": [
-								0.03115188383045526,
 								0,
-								0.9672992823503028,
 								0,
 								1,
 								0,
-								0.9985562906481273,
 								1,
-								0.9672992823503028,
-								1,
-								0.03115188383045526,
 								1,
 								0,
-								1,
-								0,
-								0
+								1
 							]
 						},
 						"useCollisionPoly": true,
@@ -46,7 +38,7 @@
 						"tag": ""
 					}
 				],
-				"sid": 727851214372580,
+				"sid": 497534900559681,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
