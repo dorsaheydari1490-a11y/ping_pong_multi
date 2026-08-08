@@ -216,10 +216,10 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 871076360521212,
+					"sid": 459641470185987,
 					"parameters": {
 						"audio-file": {
-							"path": "ping_pong"
+							"path": "8-Bit Ping Pong"
 						},
 						"loop": "looping",
 						"volume": "0",
